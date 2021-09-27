@@ -42,6 +42,7 @@ disqus:
 google_analytics: G-9TD4ZM1G10
 # Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
 # Used for Sitemap.xml and your RSS feed
+
 url: "https://jimimvp.github.io" # the base hostname & protocol for your site
 
 # If you're hosting your site at a Project repository on GitHub pages
@@ -61,17 +62,15 @@ permalink: /
 # The release of Jekyll Now that you're using
 version: v1.2.0
 
-lsi: false
-safe: true
-
-incremental: false
-highlighter: rouge
-gist:
-  noscript: false
+# Jekyll 3 now only supports Kramdown for Markdown
 kramdown:
-  math_engine: mathjax
+  # Use GitHub flavored markdown, including triple backtick fenced code blocks
+  input: GFM
+  # Jekyll 3 and GitHub Pages now only support rouge for syntax highlighting
   syntax_highlighter: rouge
-
+  syntax_highlighter_opts:
+    # Use existing pygments syntax highlighting css
+    css_class: 'highlight'
 
 # Set the Sass partials directory, as we're using @imports
 sass:

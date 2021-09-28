@@ -1,9 +1,16 @@
 
+<div class="row ">
+    <div class="col-lg-1   mr-auto" style="padding:2%;vertical-align:middle">
+
+    </div>
+    <div class="col-lg-3  mr-auto" style="padding:2%;vertical-align:middle">
+        <h1>Research</h1>
+</div>
+
 {% for post in site.posts %}
 {% for cat in post.categories %}
 {% if cat == 'research' %}
 <div class="row justify-content-md-center">
-
 
 <div class="col-lg-3 order-1 order-lg-1  mr-auto" style="padding:2%;vertical-align:middle">
     {%if post.image%}

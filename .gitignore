@@ -10,3 +10,4 @@ node_modules
 package.json
 favicon.ico
 .jekyll-cache
+vendor

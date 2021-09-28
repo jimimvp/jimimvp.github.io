@@ -99,6 +99,28 @@ span.highlight {
   background-color: #ffffd0;
 }
 
+.fa-twitter {
+  color: #1DA1F2
+
+}
+
+.ai-google-scholar {
+  color: #11a5b8
+}
+
+.fa-medium {
+  color: black
+}
+
+.fa-github {
+  color: rgb(58, 56, 56)
+}
+
+.ai-cv {
+  color: black
+}
+
+
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 //@import "highlights";

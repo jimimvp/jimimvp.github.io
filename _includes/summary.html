@@ -18,13 +18,15 @@ In 2021 I spent some time with Amazon as an applied scientist intern doing work 
     I have a broad interest in reinforcement learning, model predictive control and causality.
 </p>
 
-<p style="text-align:center">
+<!-- <p style="text-align:center">
     /
     {%for profile in site.data.profiles %}
     <a href="{{profile.link}}">{{profile.name}}</a> &nbsp;/&nbsp;
     {% endfor %}
-  </p>
+</p> -->
 
-  {% if site.google_analytics and jekyll.environment == 'production' %}
-  {% include analytics.html %}
-  {% endif %}
+<div style="text-align:center">
+{%for sm in site.data.social_media%}
+    <a href="{{sm.link}}"><i class="{{sm.favicon}}"></i></a>  &emsp;
+{%endfor%}
+</div>

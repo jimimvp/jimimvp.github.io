@@ -25,3 +25,6 @@ In 2021 I spent some time with Amazon as an applied scientist intern doing work 
     {% endfor %}
   </p>
 
+  {% if site.google_analytics and jekyll.environment == 'production' %}
+  {% include analytics.html %}
+  {% endif %}

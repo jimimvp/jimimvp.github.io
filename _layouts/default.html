@@ -11,30 +11,10 @@
 
 <body>
 
-  <div class="container">
 
-    <div class="row justify-content-center">
-      <div class="col-xl-4">
-        <h1>
-          {{site.name}}
-        </h1>
-      </div><div class="col-xl-4"></div>
-  </div>
+  {%include nav.html%} 
   
-    <div class="row justify-content-center">
-        <div class="col-xl-4">
-          {% include summary.html %}
-        </div>
-        <div class="col-xl-4 justify-content-center order-xl-0 order-first d-flex">
-          <img style="margin-bottom:10%;min-width:200px;max-width:400px;display:block;object-fit:contain" class="rounded center-block img-responsive" alt="profile photo" src="images/profile.jpg">
-        </div>
-    </div>
-
-    {% include posts.html %}
-  </div>
-
-
-
+    {{content}}
 {% include footer.html %}
 </body>
 

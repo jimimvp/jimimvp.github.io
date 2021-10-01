@@ -1,0 +1,21 @@
+-
+  link: https://link.springer.com/content/pdf/10.1007%2F978-0-387-21736-9.pdf
+  title: A Concise Course in Statistical Inference
+  description: Has a chapter on causal inference, but it's a great all-round book for statistics
+  category: causality
+- 
+  link: https://cdn1.sph.harvard.edu/wp-content/uploads/sites/1268/2021/03/ciwhatif_hernanrobins_30mar21.pdf
+  title: "Causal Inference: What If"
+  category: causality
+  description: Fundamentals of causal inference, weak connection to machine learning
+- 
+  link: https://library.oapen.org/bitstream/handle/20.500.12657/26040/11283.pdf?sequence=1&isAllowed=y
+  title: "Elements of Causal Inference"
+  category: causality
+  description: To me personally, this book under-delivers in the sense that it's not a textbook and doesn't build intuition very well, but rather a collection of the authors papers, albeit it does speak more about the connection of causality to ML.
+
+-
+  link: https://www.bradyneal.com/Introduction_to_Causal_Inference-Dec17_2020-Neal.pdf
+  title: Introduction to Causal Inference
+  category: causality
+  description:  Very good book that covers the very basics while building intuition, it also covers causal discovery from observational data.

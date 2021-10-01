@@ -30,4 +30,6 @@ Here I have collected various resources on causality that I found useful. This i
 
 ## Free Books
 
-* https://www.bradyneal.com/Introduction_to_Causal_Inference-Dec17_2020-Neal.pdf
+{% for book in site.data.books%}
+* [{{book.title}}]({{book.link}}) - {{book.description}}
+{% endfor %}

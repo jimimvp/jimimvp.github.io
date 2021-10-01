@@ -1,20 +1,20 @@
 -
-  description: leon bottou
+  description: Differentiable causal discovery.
   category: causality
   link: https://www.youtube.com/watch?v=taUMuf2Fno8
 
 -
-  description: "talk about differentiable causal discovery"
+  description: "Talk about differentiable causal discovery"
   category: causality
   link: https://www.youtube.com/watch?v=taUMuf2Fno8
   
 - 
-  description: causal representation learning
+  description: Causal representation learning
   category: causality
   link: https://www.youtube.com/watch?v=hKs-PHZnIbQ
 
 -
-  description: domain adaptation by causal inference
+  description: Domain adaptation by causal inference
   category: causality
   link: https://www.youtube.com/watch?v=z748Lf4QTlE
 -
@@ -23,20 +23,20 @@
   link: https://www.youtube.com/watch?v=Rewr4GmkYEk
 
 -
-  description: causal data science tutorial
+  description: Causal data science tutorial
   category: causality
   link: https://www.youtube.com/watch?v=2zkQjhMiZq4
 
 -
-  description: efficient neural causal discovery
+  description: Efficient neural causal discovery
   category: causality
   link: https://www.youtube.com/watch?v=ro_5FqiS5qU
 -
-  description: causal inference with bayes rule
+  description: Causal inference with bayes rule
   category: causality
   link: https://www.youtube.com/watch?v=VoJWIKEF4x8
 
 -
-  description: Bernhard Schoelkopf, learning causal 
+  description: Bernhard Schoelkopf, learning causal mechanisms
   category: causality
   link: https://www.youtube.com/watch?v=4qc28RA7HLQ&t=905s

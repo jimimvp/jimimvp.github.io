@@ -1,0 +1,37 @@
+---
+layout: default
+permalink: /blog
+---
+
+{%include mathjax.html %}
+
+
+<div class="row">
+    <div class="offset-lg-4 col-lg-4" style="text-align: center;">
+        <h1>Blog Posts </h1>
+        <br>
+    </div>
+</div>
+
+{% for post in site.posts %}
+{% for cat in post.categories %}
+{% if cat == 'blog' %}
+<div class="row justify-content-md-left blog-post">
+    <div class="offset-lg-3 col-lg-6  mr-auto">
+        <a href="{{post.url}}" style="color: rgb(45, 66, 70);"><h1>{{post.title}}</h1></a>
+        {{post.date | date: "%d. %B %Y"}}
+    </div>
+</div>
+<div class="row justify-content-md-left">
+    <div class="offset-lg-3 col-lg-6  mr-auto" style="vertical-align:middle">
+    {{post.excerpt}}
+    </div>
+</div>
+
+
+<br>
+{% endif %}
+{% endfor %}
+{% endfor %}
+
+

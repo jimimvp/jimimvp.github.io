@@ -23,11 +23,12 @@ avatar: images/profile.jpg
 
 
 navbar-links:
-  Causality: /causality
   Projects: "/#projects"
   Blog: /blog
-  Reinforcement Learning: /rl
-  Machine Learning: /ml
+  Resources:
+      - Causality: /causality
+      - Reinforcement Learning: /rl
+      - Machine Learning: /ml
 # 
 # Flags below are optional
 #

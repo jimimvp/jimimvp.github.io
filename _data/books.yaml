@@ -43,3 +43,22 @@
   title: "Model Predictive Control: Theory, Computation, and Design"
   category: rl
   description: one of the favorite books for MPC people
+
+
+-
+  link: https://mml-book.github.io/book/mml-book.pdf
+  title: "Mathematics for Machine Learning"
+  category: ml
+  description: basic mathematical toolbox for machine learning practitioners
+
+-
+  link: https://probml.github.io/pml-book/book1.html
+  title: "Probabilistic Machine Learning: An Introduction"
+  description: newest book by Kevin Murphy covering basic topics in ML
+  category: ml
+
+- 
+  link:  https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/understanding-machine-learning-theory-algorithms.pdf
+  title: "Understanding Machine Learning: From Theory to Algorithms"
+  description: perhaps the best book for getting to know statistical learning theory
+  category: ml

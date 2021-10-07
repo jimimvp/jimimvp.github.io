@@ -1,7 +1,6 @@
 ---
 layout: default
-redirect_from:
-    - /ml
+
 ---
 
 <div class="container">

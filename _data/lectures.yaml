@@ -11,3 +11,14 @@
   description: Brady Neal introduction to causal inference **recommend**
   category: causality
   link: https://www.bradyneal.com/causal-inference-course
+
+
+-
+  description: Course on reinforcement learning by Bertsekas, focus on dynamic programming perspective
+  category: rl
+  link: http://web.mit.edu/dimitrib/www/RLbook.html
+
+- 
+  description: DeepMind reinforcement learning course (2021)
+  category: rl
+  link: https://deepmind.com/learning-resources/reinforcement-learning-series-2021

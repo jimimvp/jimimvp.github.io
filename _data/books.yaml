@@ -28,15 +28,18 @@
 
 -
   link: http://web.mit.edu/dimitrib/www/RL_CH1_ROLLOUT_CLASS_NOTES.pdf
-  title: Reinforcement Learning and Optimal Control class notes
+  title: Reinforcement Learning and Optimal Control
   category: rl
+  description: Class notes from Bertsekas course
 
 - 
   link: http://incompleteideas.net/book/RLbook2020.pdf
   title: Introduction to Reinforcement Learning
   category: rl
+  description: classic from Sutton and Barto (not that math-intensive)
 
 - 
   link: https://sites.engineering.ucsb.edu/~jbraw/mpc/MPC-book-2nd-edition-1st-printing.pdf
   title: "Model Predictive Control: Theory, Computation, and Design"
   category: rl
+  description: one of the favorite books for MPC people

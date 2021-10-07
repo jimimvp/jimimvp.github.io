@@ -10,7 +10,7 @@ Here are some resources about sequential decision making, this includes reinforc
 ## Lectures
 
 {% for lect in site.data.lectures%}
-{% if lect.category == rl%}
+{% if lect.category == "rl"%}
 * [{{lect.link}}]({{lect.link}}) - {{lect.description}}
 {% endif %}
 {% endfor %}
@@ -19,9 +19,9 @@ Here are some resources about sequential decision making, this includes reinforc
 ## Free Books
 
 {% for book in site.data.books%}
-{% if book.category == rl%}
+{% if book.category == "rl"%}
 
 * [{{book.title}}]({{book.link}}) - {{book.description}}
-{% if book.category == rl%}
+{% endif l%}
 
 {% endfor %}

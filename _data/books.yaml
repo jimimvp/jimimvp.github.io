@@ -62,3 +62,9 @@
   title: "Understanding Machine Learning: From Theory to Algorithms"
   description: perhaps the best book for getting to know statistical learning theory
   category: ml
+
+-
+  link: https://mixtape.scunning.com/
+  title: "Causal Inference: The Mixtape"
+  category: causality
+  description: has useful exercises in R and python, also covers potential outcomes and instrumental variables pretty well

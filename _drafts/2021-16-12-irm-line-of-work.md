@@ -18,3 +18,8 @@ https://openreview.net/forum?id=BbNIbVPJ-42
 ### Out-of-Distribution Generalization via Risk Extrapolation (REx)
 
 https://openreview.net/forum?id=foNTMJHXHXC
+
+
+### Interesting Blog
+
+https://sites.google.com/site/irinarish/ood_generalization

@@ -67,3 +67,16 @@ Agent takes in partial observation and task description.
 
 Use Gumbel-based hard selection of appropriate schemata.
 
+
+## Recurrent Independent Mechanisms
+
+"complex generative model, temporal or not, can be thought of as the composition of
+independent mechanisms or “causal” modules" - basically we are thinking of purely Structural Equation Models that are modular here.
+
+"ne may hypothesize
+that if a brain is able to solve multiple problems beyond a single i.i.d. (independent and identically
+distributed) task, they may exploit the existence of this kind of structure by learning independent
+mechanisms that can flexibly be reused, composed and re-purposed" - trying to write a translation of this statement here, since mechanisms are not affected by distribution shifts which are realized by interventions, they are reusable across different distributions.
+
+
+

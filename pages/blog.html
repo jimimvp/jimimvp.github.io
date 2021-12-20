@@ -6,6 +6,10 @@ permalink: /blog
 {%include mathjax.html %}
 
 
+<i class="fas fa-sticky-note"  style="color: rgb(62, 118, 129);"></i> Note <i class="fas fa-blog"></i> Blog
+
+
+
 <div class="row">
     <div class="offset-lg-4 col-lg-4" style="text-align: center;">
         <h1>Blog Posts </h1>
@@ -18,7 +22,7 @@ permalink: /blog
 {% if cat == 'blog' %}
 <div class="row justify-content-md-left blog-post">
     <div class="offset-lg-3 col-lg-6  mr-auto">
-        <a href="{{post.url}}" style="color: rgb(45, 66, 70);"><h1>{{post.title}}</h1></a>
+        <a href="{{post.url}}" style="color: rgb(45, 66, 70);"> <h1>{{post.title}} <i class="fas fa-blog"></i>  </h1></a>
         {{post.date | date: "%d. %B %Y"}}
     </div>
 </div>
@@ -35,7 +39,7 @@ permalink: /blog
 
 <div class="row justify-content-md-left blog-post">
     <div class="offset-lg-3 col-lg-6  mr-auto">
-        <a href="{{post.url}}" style="color: rgb(62, 118, 129);"><h1>{{post.title}}</h1></a>
+        <a href="{{post.url}}" style="color:  rgb(45, 66, 70);"><h1>{{post.title}} <i class="fas fa-sticky-note"  style="color: rgb(62, 118, 129);"></i></h1></a>
         {{post.date | date: "%d. %B %Y"}}
     </div>
 </div>

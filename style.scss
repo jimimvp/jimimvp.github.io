@@ -383,3 +383,14 @@ body {
     width: 100%;
   }
 }
+
+
+
+.round-bg {
+  background-color: gray; /* Changing background color */
+  font-weight: bold; /* Making font bold */
+  border-radius: 20px; /* Making border radius */
+  width: auto; /* Making auto-sizable width */
+  height: auto; /* Making auto-sizable height */
+  padding: 5px 30px 5px 30px; /* Making space around letters */
+}

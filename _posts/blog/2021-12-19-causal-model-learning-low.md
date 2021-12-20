@@ -1,5 +1,5 @@
 ---
-title: Object-Centric Causal Model Learning Line of Work
+title: Causal Model Learning and Modular Computation Line of Work
 categories: blog
 layout: post
 ---

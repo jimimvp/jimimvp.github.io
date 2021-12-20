@@ -4,6 +4,9 @@ categories: note
 layout: post
 ---
 
+My notes on for the causal model learning and modular computation line of work which connects to learning independent mechanisms.
+
+
 ## Neural Production Systems
 
 GNNs are not suited to extract objects from images, for two main reasons:

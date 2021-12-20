@@ -24,7 +24,7 @@ avatar: images/profile.jpg
 
 navbar-links:
   Projects: "/#projects"
-  Blog: /blog
+  Blog/Notes: /blog
   Resources:
       - Causality: /causality
       - Reinforcement Learning: /rl

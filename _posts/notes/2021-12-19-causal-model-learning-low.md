@@ -82,4 +82,15 @@ distributed) task, they may exploit the existence of this kind of structure by l
 mechanisms that can flexibly be reused, composed and re-purposed" - trying to write a translation of this statement here, since mechanisms are not affected by distribution shifts which are realized by interventions, they are reusable across different distributions.
 
 
+"The central question motivating our work is how a gradient-based deep learning approach can discover a representation of high-level variables which favour forming independent but sparsely interacting recurrent mechanisms in order to benefit from the modularity and independent mechanisms assumption." - `core motivation of the work`
+
+"The central question motivating
+our work is how a gradient-based deep learning approach can learn a representation of high level
+variables which favour learning independent but sparsely interacting recurrent mechanisms in order
+to benefit from such modularity assumption."
+
+Each RIM (Recurrent Independent Mechanism) should be activated and updated when the input is relevant to it.
+
+Attention mechanism selects and only activates subsets of independent mechanisms.
+
 

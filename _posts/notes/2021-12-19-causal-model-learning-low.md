@@ -1,6 +1,6 @@
 ---
 title: Causal Model Learning and Modular Computation Line of Work
-categories: blog
+categories: note
 layout: post
 ---
 

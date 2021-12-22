@@ -4,7 +4,7 @@ categories: note
 layout: post
 ---
 
-My notes on for the causal model learning and modular computation line of work which connects to learning independent mechanisms.
+My notes on causal model learning and modular computation line of work which connects to learning independent mechanisms. (very roughly written, just capturing the gist of a couple of papers with excerpts).
 
 
 ## Neural Production Systems
@@ -92,5 +92,7 @@ to benefit from such modularity assumption."
 Each RIM (Recurrent Independent Mechanism) should be activated and updated when the input is relevant to it.
 
 Attention mechanism selects and only activates subsets of independent mechanisms.
+
+RIMs can be used as a drop-in replacement for a GRU/LSTM layer.
 
 

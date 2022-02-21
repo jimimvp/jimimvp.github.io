@@ -6,6 +6,38 @@ layout: post
 
 Here I will continually update the research papers that I have read, comment them, brainstorm some ideas of improvement.
 
+## Learning and Planning in Complex Action Spaces - MuZero for Continuous Spaces (Hubert et al., 2021), 2022.02.21
+
+Up until now, MuZero was evaluated in simple action spaces, that are so small that they could be enumerated in full through MCTS.
+Sample-based methods show benefits when we shift to large complex spaces, since we don't need to enumerate all of the actions (example, continuous spaces) (but we need to pay something here for our sample-based estimate?). Key question: how does the sampling procedure interact with policy improvement and policy evaluation?
+
+In this work, they sample actions and use deterministic transition models.
+
+The MuZero algorithm can be understood as the combination of policy evaluation and policy improvement. The MCTS step provides policy improvement in form of regressing the policy towards a better policy extracted locally. (come to think of it, off-policy, bootstrapping, approximation - deadly triad?). 
+
+Questions that the paper focuses on (as per the authors):
+• how to use the locally improved policy to learn about
+the global policy
+• how to use it to act
+• how to perform an explicit local step of policy evalua-
+tion of the improved policy for planning
+• how all these steps interact with each other
+
+So far in the paper, it's very abstract... Which problem do they actually solve, how to select actions for policy improvement? The authors say that they propose a framework to reason about the sampled policy improvement by re-writing the expectations with respect to the improved policy. Apparently this is achieved by looking at `action-independent` policy improvement operators.
+
+They separate the process of policy improvement into an `improvement operator` and `projection operator`. Why projection? Because we approximate the improved policy in the space of realizable policies.
+
+**Sample-based action-independent policy improvement** well, basically we sample from a proposal distribution $\beta$ finitely many samples and compute the empirical distribution (non-zero only on the samples), this is multiplied by $f(s,a, Z_\beta(s))$ where the last term is state-dependent normalizing factor.
+
+At first glance, the theorem in 4.4 seems to a be a straight-forward application of the CLT, to show that with infinite number of samples we converge to the true improvement operator in distribution.
+
+
+**Section 5, finally, we get to Sampled MuZero** so this part is dealing with how to adapt MCTS, more concretely PUCT formula (Silver et al., 2016) in order to use it in sampled action spaces. One straight-forward approach is search over sampled actions, and keep everything unchanged. This can though lead to unstable results. (it's still unclear to me how the sampling is done here, for each step separately, or we just sample finitely many actions from action space and continue business as usual?). What the authors rather propose is using $\pi_\beta$ for action selection, where $\pi_\beta = (\frac{\hat \beta}{\beta}\pi$, i.e. an importance weighted policy since the sampling was done from the proposal distribution $\beta$. 
+
+**this paper needs more attention!**
+
+
+
 ## Mastering Atari Games with Limited Data (Ye et al. 2021), 2022.02.21 
 
 The authors build on top of MuZero Reanalyze algorithm to introduce EfficientZero, with which they achieve SotA performance on the Atari benchmark. They start by noticing 3 things about the MuZero Reanalyze algorithm:

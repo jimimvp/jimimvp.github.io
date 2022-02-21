@@ -1,10 +1,28 @@
 ---
-title: What Am I Reading
+title: What I Am Reading
 categories: blog
 layout: post
 ---
 
 Here I will continually update the research papers that I have read, comment them, brainstorm some ideas of improvement.
+
+## Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer
+
+Paper introduces mixture of experts layer as a way of increasing the size of neural networks in terms of number of parameters, but at the same time reducing computation since only subpart of the experts are used for computation on per-sample basis.
+The MoE layer consists of simple MLPs and a learnable gating network which selects a sparse combination of experts for computation, so key questions:
+1) How do we train this? Does every expert see the same data or separate subsets of data?
+
+All parts are trained jointly by back-propagation (whatever is meant by "jointly", I guess end-to-end). So the key here is that the gating mechanism masks out the output of the individual experts. By the gating mechanism, we can decide which parts of this large layer we want to compute.
+
+**Noisy Top-K Gating** before taking the softmax function, they add tunable Gaussian noise and then keep only the top-k values, the rest being set to -$\infty$. This is a way in which they ensure sparsity, it seems though rather arbitrary, there is no hard-gating, there is only the softmax that is used to compute the weights of each of the outputs. This is literally all that they do, no fancy gradient computation through discrete decisions by REINFORCE. 
+
+**The shrinking batch problem** This is what they call the problem of experts receiving data sparsely, because k < n. To increase the batch size, they propose data parallelism and model parallelism. This seems to me to be ad-hoc. I think the right way of doing things here is to allow the experts to "fight" for data points, this means that inherently some experts might not see some data points and might actually never get selected. This is good, since we are "pruning" our huge model in this way, which leads to less parameters.
+
+**Balancing expert utilization** seems like the same problem as above, some experts get too strong too early and end up being preferred. To combat this, they have an additional loss that enforces that experts have similar importance. Tbh, I don't really understand equation (6), the importance is the sum over gatings for an example x in batch X? Is this the variance across gating dimensions and we want to push the variance to be 0? ... Ah, now I understand, so basically they don't use the variance, but rather the coefficient of variation, which is basically sqrt(variance)/mean. But still, it's not clear to me why would we want to minimize this quantity...
+
+
+**Summary points.** It seems to me that the actual problem of datapoint assignment hasn't been addressed in this paper, I am also a bit puzzled  by the way how the problem of collapse to a few experts has been solved by gating coefficient of variation, might be that there is a better way of doing this. I like the idea of making a "mixture of experts layer", and then being able to use it as plug and play layer in a neural networks, but stacking these kind of layers together (as far as I know) hasn't been explored. This might also open up a whole different can of worms and might also not be actually useful, need to think about this.
+
 
 ## Learning and Planning in Complex Action Spaces - MuZero for Continuous Spaces (Hubert et al., 2021), 2022.02.21
 

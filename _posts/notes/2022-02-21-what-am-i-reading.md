@@ -11,20 +11,20 @@ Here I will continually update the research papers that I have read, comment the
 Two-player Stackelberg framing of offline RL, where the policy is the "leader" and the critic is the follower.
 More concretely, a two-player Stackelberg game has the formulation
 
-$$
-\arg\min_x g(x, y_x)\\
-s.t. y_x = \arg\min h(x, y)
-$$
+$$\begin{eqnarray}
+\arg\min_x g(x, y_x) \nonumber \\
+s.t. y_x = \arg\min h(x, y) \nonumber
+\end{eqnarray}$$
 
 Where y is the follower and x is the leader. 
 The Stackelberg game can be seen as generalizing previous min-max zero-sum formulations, which are of the same form, but $$g = -h$$.
 The application to RL is pretty much straight-forward, if we take the critic being the function $$f$$, then the formulation becomes the following
 
-$$
-\hat\pi = \arg\min_\pi \mathcal L(\pi, f^\pi)
+$$\beign{eqnarray}
+\hat\pi &= \arg\min_\pi \mathcal L(\pi, f^\pi) \nonumber \\
+s.t. f^\pi &= \arg\min_f \mathcal L(\pi, f) + \beta \mathcal E(\pi, f) \nonumber
+\end{eqnarray}$$
 
-s.t. f^\pi = \arg\min_f \mathcal L(\pi, f) + \beta \mathcal E(\pi, f)
-$$
 Where the last term $$\mathcal E$$ for the constraint is the Bellman consistency loss which is basically your standard 1-step TD-error when applying the Bellman operator, i.e. it's policy evaluation.
 The first the is the pessimism term which is $$L(\pi, f) = \mathbb E[(f(s,\pi)-f(s,a)^2]$$, unfortunately at this point in the paper it isn't clear to me where $$a$$ is drawn from, I suppose the offline dataset.
 

@@ -129,7 +129,8 @@ The authors build on top of MuZero Reanalyze algorithm to introduce EfficientZer
 <script> 
 var c = 0;
 $(function() {
-    $("h2").each(function(index){ $(this).text(index.toString() + ". " + $(this).text())})
+    var num = $("h2").length;
+    $("h2").each(function(index){ $(this).text((num-index).toString() + ". " + $(this).text())})
 }
 );
 

@@ -1,6 +1,6 @@
 ---
 title: What I Am Reading
-categories: blog
+categories: note
 layout: post
 ---
 

@@ -6,6 +6,7 @@ layout: post
 
 Here I will continually update the research papers that I have read, comment them, brainstorm some ideas of improvement.
 
+
 ## Adversarially Trained Actor Critic for Offline Reinforcement Learning ([Link](https://arxiv.org/pdf/2202.02446.pdf), rough pass)
 
 Two-player Stackelberg framing of offline RL, where the policy is the "leader" and the critic is the follower.
@@ -122,3 +123,10 @@ The authors build on top of MuZero Reanalyze algorithm to introduce EfficientZer
 
 
 
+
+
+
+<script> 
+var c = 0;
+$("h2").each(function(){ c+=1; $(this).value = str(c) + ". " + $(this).value})
+</script>

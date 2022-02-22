@@ -13,7 +13,7 @@ More concretely, a two-player Stackelberg game has the formulation
 
 $$\begin{eqnarray}
 \arg\min_x g(x, y_x) \nonumber \\
-s.t. y_x = \arg\min h(x, y) \nonumber
+s.t. y_x = \arg\min_y h(x, y) \nonumber
 \end{eqnarray}$$
 
 Where y is the follower and x is the leader. 
@@ -21,8 +21,8 @@ The Stackelberg game can be seen as generalizing previous min-max zero-sum formu
 The application to RL is pretty much straight-forward, if we take the critic being the function $$f$$, then the formulation becomes the following
 
 $$\beign{eqnarray}
-\hat\pi &= \arg\min_\pi \mathcal L(\pi, f^\pi) \nonumber \\
-s.t. f^\pi &= \arg\min_f \mathcal L(\pi, f) + \beta \mathcal E(\pi, f) \nonumber
+\hat\pi = \arg\min_\pi \mathcal L(\pi, f^\pi) \nonumber \\
+s.t. f^\pi = \arg\min_f \mathcal L(\pi, f) + \beta \mathcal E(\pi, f) \nonumber
 \end{eqnarray}$$
 
 Where the last term $$\mathcal E$$ for the constraint is the Bellman consistency loss which is basically your standard 1-step TD-error when applying the Bellman operator, i.e. it's policy evaluation.

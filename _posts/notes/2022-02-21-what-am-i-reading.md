@@ -20,7 +20,7 @@ Where y is the follower and x is the leader.
 The Stackelberg game can be seen as generalizing previous min-max zero-sum formulations, which are of the same form, but $$g = -h$$.
 The application to RL is pretty much straight-forward, if we take the critic being the function $$f$$, then the formulation becomes the following
 
-$$\beign{eqnarray}
+$$\begin{eqnarray}
 \hat\pi = \arg\min_\pi \mathcal L(\pi, f^\pi) \nonumber \\
 s.t. f^\pi = \arg\min_f \mathcal L(\pi, f) + \beta \mathcal E(\pi, f) \nonumber
 \end{eqnarray}$$

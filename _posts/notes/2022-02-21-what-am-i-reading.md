@@ -12,7 +12,7 @@ Two-player Stackelberg framing of offline RL, where the policy is the "leader" a
 More concretely, a two-player Stackelberg game has the formulation
 
 $$
-\arg\min_x g(x, y_x)
+\arg\min_x g(x, y_x)\\
 s.t. y_x = \arg\min h(x, y)
 $$
 

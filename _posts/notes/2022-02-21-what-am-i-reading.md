@@ -50,6 +50,10 @@ With the by-level optimization formulation, the algorithm achieves state-of-the-
 
 **Experiments.** The main conclusions are that ATAC outperforms the model-free and model-based baselines in the D4RL benchamrk, the DQRA loss (doing the convex combination for the critic losses) seems like affecting the performance strongly. Furthermore, there are experiments showing robustness for different values of $$\beta$$.
 
+
+**Summary** One of the key questions that is left unanswered in the paper is what is a good choice of the $$\beta$$ hyperparameter?.
+
+
 ## Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer
 
 Paper introduces mixture of experts layer as a way of increasing the size of neural networks in terms of number of parameters, but at the same time reducing computation since only subpart of the experts are used for computation on per-sample basis.

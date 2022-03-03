@@ -11,6 +11,6 @@ permalink: /ml
 {% if book.category == "ml"%}
 
 * [{{book.title}}]({{book.link}}) - {{book.description}}
-{% endif l%}
+{% endif %}
 
 {% endfor %}

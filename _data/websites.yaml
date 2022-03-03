@@ -11,3 +11,8 @@ https://matheusfacure.github.io/python-causality-handbook/landing-page.html:
 http://philsci-archive.pitt.edu/19773/1/Markus_Commentary_Revisions_Unblinded.pdf: 
   category: causality
   description: comparison of Rubin's and Pearl's causal modelling frameworks.
+
+
+ https://github.com/vveitch/causality-tutorials:
+  category: causality
+  description: useful code examples of estimating causal quantities.

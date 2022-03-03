@@ -16,3 +16,7 @@ http://philsci-archive.pitt.edu/19773/1/Markus_Commentary_Revisions_Unblinded.pd
  https://github.com/vveitch/causality-tutorials:
   category: causality
   description: useful code examples of estimating causal quantities.
+
+http://web.cs.ucla.edu/~guyvdb/slides/ECAI20.pdf:
+  category: ml
+  description: beautiful slides about probabilistic circuits, best place to start understanding them.

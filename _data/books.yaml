@@ -69,6 +69,12 @@
   category: ml
 
 -
+  link: https://probml.github.io/pml-book/book2.html
+  title: "Probabilistic Machine Learning: Advanced Topics"
+  description: continuation of Kevin Murphy's first book, with some further more advanced developments in the field.
+  category: ml
+
+-
   link: https://mixtape.scunning.com/
   title: "Causal Inference: The Mixtape"
   category: causality

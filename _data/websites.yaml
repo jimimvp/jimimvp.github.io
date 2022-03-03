@@ -1,22 +1,24 @@
-https://causalinference.gitlab.io:
+- 
+  link: https://causalinference.gitlab.io
   category: causality
   description: contains courses and a book on causality.
 
-
-https://matheusfacure.github.io/python-causality-handbook/landing-page.html:
+-
+  link: https://matheusfacure.github.io/python-causality-handbook/landing-page.html
   category: causality
   description: simplified introduction to acusal inference with python examples.  
 
-
-http://philsci-archive.pitt.edu/19773/1/Markus_Commentary_Revisions_Unblinded.pdf: 
+-
+  link: http://philsci-archive.pitt.edu/19773/1/Markus_Commentary_Revisions_Unblinded.pdf
   category: causality
   description: comparison of Rubin's and Pearl's causal modelling frameworks.
 
-
- https://github.com/vveitch/causality-tutorials:
+-
+  link: https://github.com/vveitch/causality-tutorials
   category: causality
   description: useful code examples of estimating causal quantities.
 
-http://web.cs.ucla.edu/~guyvdb/slides/ECAI20.pdf:
+-
+  link: http://web.cs.ucla.edu/~guyvdb/slides/ECAI20.pdf
   category: ml
   description: beautiful slides about probabilistic circuits, best place to start understanding them.

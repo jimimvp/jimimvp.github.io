@@ -6,6 +6,18 @@ layout: post
 
 Here I will continually update the research papers that I have read, comment them, brainstorm some ideas of improvement.
 
+## Lessons from AlphaZero for Optimal, Model Predictive and Adaptive Control ([Link](https://arxiv.org/pdf/2108.10315.pdf))
+
+Dimitri Bertsekas' take on the alpha-zero craze.
+In the abstract, he starts directly with highlighting the off-policy fact, that the off-line player is not used directly online in order to obtain further samples. The online player plays better than the extensively trained offline player, apparently due to long lookahead minimization which corrects for imperfections of the offline player. More concretely:
+
+> An important lesson from AlphaZero and TD-Gammon is that performance of an off-line trained controller can be greatly improved by on-line approximation in value space, with long lookahead (whether involving minimization or rollout with an off-line obtained policy).
+
+The approximation in value space amounts to a step of Newton's method for solving the Bellman equation, the starting point of the Newton step is based on results of offline training. I'm curious how this is argued, Newton's method uses curvature information (Hessian) in order to scale the gradient appropriately.
+
+The key question of the paper is why are there beneficial effects of online decision making on top of offline training?
+
+
 
 ## Adversarially Trained Actor Critic for Offline Reinforcement Learning ([Link](https://arxiv.org/pdf/2202.02446.pdf), rough pass)
 

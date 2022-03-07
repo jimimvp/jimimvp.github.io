@@ -1,6 +1,6 @@
 ---
 title: Reinforcement Learning Roundup (1)
-categories: blog
+categories: note
 layout: post
 ---
 

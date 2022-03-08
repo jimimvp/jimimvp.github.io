@@ -1,5 +1,5 @@
 ---
 categories: note
-title: Synthetic Returns
+title: Credit Assignment in Reinforcement Learning
 layout: post
 ---

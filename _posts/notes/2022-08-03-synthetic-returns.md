@@ -42,9 +42,34 @@ The $$\alpha$$ and $$\beta$$ hyperparameters are there because of the trade-off 
 **BONUS: Appendix.** In the current formulation the reward contributions of the summation might be double counted, so there is no reward conservation. The section 6.4 limitation of additive regression I am not getting exactly, now suddenly we have the function $$c(\cdot, \cdot)$$, I need to read this more thoroughly.
 
 
+# Counterfactual Credit Assignment
+
+Key idea: condition value functions on future events by learning to extract relevant information from a trajectory.
+
+Let's jump to the method section right away, I'm just gonna say it straight, I don't like the notation style... Who uses $$\mathcal{X}$$ for state space in RL, observation is $$E_t$$ and $$S_t$$ the score function , come on :D ... Note that, the `score function` is basically $$\nabla_\theta \log \pi_theta(a | x)$$. 
+Equation 1 indicates REINFORCE, so the point here is that it's a `Monte-Carlo estimate`! So the only thing that we need to do is to be able to simulate trajectories (a lot of them though!). Another feature here is the value function baseline in this formulation (I believe that the original REINFORCE didn't have value function baseline?). A key feature of REINFORCE is that the likelihood of an action increases proportionally to the return from time-step t, not the whole trajectory. Second feature is that subtracting $$V(X_t)$$ does not bias the estimator and typically reduces the variance, the baseline is normally assumed not to depend on future observations `this is kind of the motivator of this paper`.
+
+`Weber et al (2019)` showed that including variables that are causally dependent on the action leads to a biased estimator.
+
+The REINFORCE estimator actually updates only the single action that was taken in the trajectory, but there is work from Sutton (2000) `(would be interest to read this)` that shows that we can derive a policy gradient estimator that actually updates all of the actions simultaneously. It is basically summing across all of the timesteps of the trajectory discounted and summing over all of the actions where we weight the score function with $$Q(X_t, a)$$. I don't understand this sentence after eq. 2: "... this is in contrast with score function estimates above which depend on the return, a function of the entire trajectory" `actually, this is true yes, the REINFORCE gradient weights all of the timesteps by difference between $$G_t - V(X_t)$$`.
+
+**Hindisght reasoning vs. luck.** Imagine a team game where the agent is a weak player and it plays with a strong player in a team. The team wins, but what should the agent learn from this positive reward signal, since all of the actions that it has taken have not contributed to victory.
+
+`Buesing et al. (2019)` show that hindsight information is helpful in understanding the trajectory, pretty frequently. This work is connected to the work of Buesign et al. with the difference that this work focuses on model-free and the other is model-based.
+
+`Here's a thought` I think that this future-conditioned baseline is predicting returns that are not influenced by the policy, whatever the policy does or in fact, maybe this can be formulated as predicting the `worst-case return`?
 
 
+**Future-conditional PG.** The point here is that the baseline can be conditioned on future information, but there needs to be a `importance correction term because otherwise future-conditioned policy gradients would be biased.` How bad is this bias?
 
+**Theorem 1. FC-PG** Assumption in the main text is that the (policy) - (action density conditioned on statistic and state) ratio needs to be finite, i.e. 0 cannot be in the denominator. In fact, this improtance ratio is used for correction in fron of $$V(X_t, \phi_t$$, apparently there are no requirements to $$\phi_t$$ with the correction term. The aforementioned assumption means that knowing the statistic $$\phi_t$$ shouldn't make the action taken by the policy completely unaffecting the future (hmmm... is this a big assumption actually?).
+
+`the FC-PG doesn't necessarily have lower variance than classical PG, because of the importance weighting`, the countermeasure to this is to study an estimator that makes the ratio equal to 1, meaning that the action is completely independent of the statistic $$\phi_t$$, i.e. $$p(a | X_t, \phi_t) = \pi(a | X_t)$$. And this is what leads us to **CCA-PG**, i.e. counterfactual gradient estimate.
+
+**Theorem 2. CCA-PG.** Interesting theoretical result here is that the variance of CCA is at most the variance of the classical policy gradient and it has no bias, the only condition is that $$A_t$$ is independent of $$\phi_t$$. 
+
+
+**How do we estimate $$\phi_t$$?** This paper proposes three methods, the interesting result is `Theorem 3. **TODO**`
 
 
 

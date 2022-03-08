@@ -46,12 +46,12 @@ The $$\alpha$$ and $$\beta$$ hyperparameters are there because of the trade-off 
 
 Key idea: condition value functions on future events by learning to extract relevant information from a trajectory.
 
-Let's jump to the method section right away, I'm just gonna say it straight, I don't like the notation style... Who uses $$\mathcal{X}$$ for state space in RL, observation is $$E_t$$ and $$S_t$$ the score function , come on :D ... Note that, the `score function` is basically $$\nabla_\theta \log \pi_theta(a | x)$$. 
+Let's jump to the method section right away, I'm just gonna say it straight, I don't like the notation style... Who uses $$\mathcal{X}$$ for state space in RL, observation is $$E_t$$ and $$S_t$$ the score function , come on :D ... Note that, the `score function` is basically $$\nabla_\theta \log \pi_\theta(a | x)$$. 
 Equation 1 indicates REINFORCE, so the point here is that it's a `Monte-Carlo estimate`! So the only thing that we need to do is to be able to simulate trajectories (a lot of them though!). Another feature here is the value function baseline in this formulation (I believe that the original REINFORCE didn't have value function baseline?). A key feature of REINFORCE is that the likelihood of an action increases proportionally to the return from time-step t, not the whole trajectory. Second feature is that subtracting $$V(X_t)$$ does not bias the estimator and typically reduces the variance, the baseline is normally assumed not to depend on future observations `this is kind of the motivator of this paper`.
 
 `Weber et al (2019)` showed that including variables that are causally dependent on the action leads to a biased estimator.
 
-The REINFORCE estimator actually updates only the single action that was taken in the trajectory, but there is work from Sutton (2000) `(would be interest to read this)` that shows that we can derive a policy gradient estimator that actually updates all of the actions simultaneously. It is basically summing across all of the timesteps of the trajectory discounted and summing over all of the actions where we weight the score function with $$Q(X_t, a)$$. I don't understand this sentence after eq. 2: "... this is in contrast with score function estimates above which depend on the return, a function of the entire trajectory" `actually, this is true yes, the REINFORCE gradient weights all of the timesteps by difference between $$G_t - V(X_t)$$`.
+The REINFORCE estimator actually updates only the single action that was taken in the trajectory, but there is work from Sutton (2000) `(would be interest to read this)` that shows that we can derive a policy gradient estimator that actually updates all of the actions simultaneously. It is basically summing across all of the timesteps of the trajectory discounted and summing over all of the actions where we weight the score function with $$Q(X_t, a)$$. I don't understand this sentence after eq. 2: "... this is in contrast with score function estimates above which depend on the return, a function of the entire trajectory" `actually, this is true yes, the REINFORCE gradient weights all of the timesteps by difference between` $$G_t - V(X_t)$$.
 
 **Hindisght reasoning vs. luck.** Imagine a team game where the agent is a weak player and it plays with a strong player in a team. The team wins, but what should the agent learn from this positive reward signal, since all of the actions that it has taken have not contributed to victory.
 
@@ -69,7 +69,7 @@ The REINFORCE estimator actually updates only the single action that was taken i
 **Theorem 2. CCA-PG.** Interesting theoretical result here is that the variance of CCA is at most the variance of the classical policy gradient and it has no bias, the only condition is that $$A_t$$ is independent of $$\phi_t$$. 
 
 
-**How do we estimate $$\phi_t$$?** This paper proposes three methods, the interesting result is `Theorem 3. **TODO**`
+**How do we estimate $$\phi_t$$?** This paper proposes three methods, the interesting result is `Theorem 3. TODO`
 
 
 

@@ -66,14 +66,14 @@ The REINFORCE estimator actually updates only the single action that was taken i
 
 **Future-conditional PG.** The point here is that the baseline can be conditioned on future information, but there needs to be a `importance correction term because otherwise future-conditioned policy gradients would be biased.` How bad is this bias?
 
-**Theorem 1. FC-PG** Assumption in the main text is that the (policy) - (action density conditioned on statistic and state) ratio needs to be finite, i.e. 0 cannot be in the denominator. In fact, this improtance ratio is used for correction in fron of $$V(X_t, \phi_t)$$, apparently there are no requirements to $$\phi_t$$ with the correction term. The aforementioned assumption means that knowing the statistic $\phi_t$ shouldn't make the action taken by the policy completely unaffecting the future (hmmm... is this a big assumption actually?).
+**Theorem 1. FC-PG** Assumption in the main text is that the (policy) - (action density conditioned on statistic and state) ratio needs to be finite, i.e. 0 cannot be in the denominator. In fact, this improtance ratio is used for correction in fron of $$V(X_t, \phi_t)$$, apparently there are no requirements to $$\phi_t$$ with the correction term. The aforementioned assumption means that knowing the statistic $$\phi_t$$ shouldn't make the action taken by the policy completely unaffecting the future (hmmm... is this a big assumption actually?).
 
-`the FC-PG doesn't necessarily have lower variance than classical PG, because of the importance weighting`, the countermeasure to this is to study an estimator that makes the ratio equal to 1, meaning that the action is completely independent of the statistic \(\phi_t\), i.e. $p(a | X_t, \phi_t) = \pi(a | X_t)$. And this is what leads us to **CCA-PG**, i.e. counterfactual gradient estimate.
+`the FC-PG doesn't necessarily have lower variance than classical PG, because of the importance weighting`, the countermeasure to this is to study an estimator that makes the ratio equal to 1, meaning that the action is completely independent of the statistic $$\phi_t$$, i.e. $$p(a | X_t, \phi_t) = \pi(a | X_t)$$. And this is what leads us to **CCA-PG**, i.e. counterfactual gradient estimate.
 
 **Theorem 2. CCA-PG.** Interesting theoretical result here is that the variance of CCA is at most the variance of the classical policy gradient and it has no bias, the only condition is that $$A_t$$ is independent of $$\phi_t$$. 
 
 
-**How do we estimate $$\phi_t$$?** This paper proposes three methods, the interesting result is `Theorem 3.`. We consider a general variable $$Y_t$$ that is a function of the whole trajectory (known in hindsight) if we learn a generative model with latent variable $$\epsilon_t$$ such that $$\epsilon_t \ind A_t$$, such that we compute by marginalizing out $$\epsilon_t$$
+**How do we estimate** $$\phi_t$$? This paper proposes three methods, the interesting result is `Theorem 3.`. We consider a general variable $$Y_t$$ that is a function of the whole trajectory (known in hindsight) if we learn a generative model with latent variable $$\epsilon_t$$ such that $$\epsilon_t \ind A_t$$, such that we compute by marginalizing out $$\epsilon_t$$
 $$
 p(Y_t | A_t, X_t) = \int p(\epsilon_t | X_t) p(Y_t | X_t, A_t, \epsilon_t) d\epsilon_t
 $$

@@ -68,7 +68,7 @@ The REINFORCE estimator actually updates only the single action that was taken i
 
 **Theorem 1. FC-PG** Assumption in the main text is that the (policy) - (action density conditioned on statistic and state) ratio needs to be finite, i.e. 0 cannot be in the denominator. In fact, this improtance ratio is used for correction in fron of $$V(X_t, \phi_t)$$, apparently there are no requirements to $$\phi_t$$ with the correction term. The aforementioned assumption means that knowing the statistic $\phi_t$ shouldn't make the action taken by the policy completely unaffecting the future (hmmm... is this a big assumption actually?).
 
-`the FC-PG doesn't necessarily have lower variance than classical PG, because of the importance weighting`, the countermeasure to this is to study an estimator that makes the ratio equal to 1, meaning that the action is completely independent of the statistic $\phi_t$, i.e. $p(a | X_t, \phi_t) = \pi(a | X_t)$. And this is what leads us to **CCA-PG**, i.e. counterfactual gradient estimate.
+`the FC-PG doesn't necessarily have lower variance than classical PG, because of the importance weighting`, the countermeasure to this is to study an estimator that makes the ratio equal to 1, meaning that the action is completely independent of the statistic \(\phi_t\), i.e. $p(a | X_t, \phi_t) = \pi(a | X_t)$. And this is what leads us to **CCA-PG**, i.e. counterfactual gradient estimate.
 
 **Theorem 2. CCA-PG.** Interesting theoretical result here is that the variance of CCA is at most the variance of the classical policy gradient and it has no bias, the only condition is that $$A_t$$ is independent of $$\phi_t$$. 
 

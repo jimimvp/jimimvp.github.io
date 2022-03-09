@@ -8,9 +8,8 @@ The problem of credit assignment is a long-lasting issue in reinforcement learni
 
 * Synthetic Returns for Long-Term Credit Assignment 
 
-\(
- \newcommand{\ind}{\perp\!\!\!\!\perp} 
-\)
+$$\newcommand{\ind}{\perp\!\!\!\!\perp} 
+$$
 
 
 # Synthetic Returns for Long-Term Credit Assignment (24th Feb 2021)

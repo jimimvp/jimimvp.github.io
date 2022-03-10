@@ -73,7 +73,7 @@ The REINFORCE estimator actually updates only the single action that was taken i
 **Theorem 2. CCA-PG.** Interesting theoretical result here is that the variance of CCA is at most the variance of the classical policy gradient and it has no bias, the only condition is that $$A_t$$ is independent of $$\phi_t$$. 
 
 
-**How do we estimate** $\phi_t$? This paper proposes three methods, the interesting result is `Theorem 3.`. We consider a general variable $$Y_t$$ that is a function of the whole trajectory (known in hindsight) if we learn a generative model with latent variable $\epsilon_t$ such that $\epsilon_t \ind A_t$, such that we compute by marginalizing out $\epsilon_t$
+**How do we estimate** \(\phi_t\)? This paper proposes three methods, the interesting result is `Theorem 3.`. We consider a general variable $$Y_t$$ that is a function of the whole trajectory (known in hindsight) if we learn a generative model with latent variable $\epsilon_t$ such that $\epsilon_t \ind A_t$, such that we compute by marginalizing out $\epsilon_t$
 $$
 p(Y_t | A_t, X_t) = \int p(\epsilon_t | X_t) p(Y_t | X_t, A_t, \epsilon_t) d\epsilon_t
 $$

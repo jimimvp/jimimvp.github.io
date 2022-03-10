@@ -78,7 +78,7 @@ The REINFORCE estimator actually updates only the single action that was taken i
 $$p(Y_t | A_t, X_t) = \int p(\epsilon_t | X_t) p(Y_t | X_t, A_t, \epsilon_t) d\epsilon_t
 $$
 
-Note, we are allowed to do so because of independence, but $Y_t$ is not assumed to be independent from the action. This probabilistic model induces the posterior $p(\epsilon_t | A_t, X_t, Y_t)$, if we sample $\phi_t$ from this posterior, then it's going to be conditionally independent of $A_t$ given $X_t$. This is a bit weird, since the posterior conditions on the action. But as it turns out, 1 sample is conditionally independent but a collection of samples wouldn't be, i.e. a single sample form the posterior recovers conditional independence properties of the prior. `why?`
+Note, we are allowed to do so because of independence, but $Y_t$ is not assumed to be independent from the action. This probabilistic model induces the posterior $p(\epsilon_t | A_t, X_t, Y_t)$, if we sample $\phi_t$ from this posterior, then it's going to be conditionally independent of $A_t$ given $X_t$. This is a bit weird, since the posterior conditions on the action. But as it turns out, 1 sample is conditionally independent but a collection of samples wouldn't be, i.e. a single sample form the posterior recovers conditional independence properties of the prior.
 
 **Corollary 1.** I don't understand this really, it's basically taking the conditional expectation of $V(X_t, \epsilon_t)$ with respect to the distribution $p(\epsilon_t | X_t, A_t, Y_t)$, and somehow this results in obtaining $V(X_t, A_t, Y_t)$, the formula is correct, but I don't get the intuition because normally it's only $V(X_t )$ how the value is defined, **Corrolary 2** is a similar story. 
 

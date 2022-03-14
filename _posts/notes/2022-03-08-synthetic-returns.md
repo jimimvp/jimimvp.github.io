@@ -66,25 +66,29 @@ The REINFORCE estimator actually updates only the single action that was taken i
 
 **Future-conditional PG.** The point here is that the baseline can be conditioned on future information, but there needs to be a `importance correction term because otherwise future-conditioned policy gradients would be biased.` How bad is this bias?
 
-**Theorem 1. FC-PG** Assumption in the main text is that the (policy) - (action density conditioned on statistic and state) ratio needs to be finite, i.e. 0 cannot be in the denominator. In fact, this improtance ratio is used for correction in fron of $$V(X_t, \phi_t)$$, apparently there are no requirements to $$\phi_t$$ with the correction term. The aforementioned assumption means that knowing the statistic $$\phi_t$$ shouldn't make the action taken by the policy completely unaffecting the future (hmmm... is this a big assumption actually?).
+**Theorem 1. FC-PG** Assumption in the main text is that the (policy) - (action density conditioned on statistic and state) ratio needs to be finite, i.e. 0 cannot be in the denominator. In fact, this improtance ratio is used for correction in fron of $$V(X_t, \phi_t)$$, apparently there are no requirements to $$\phi_t$$ with the correction term. The aforementioned assumption means that knowing the statistic $$\phi_t$$ shouldn't 
+make the action taken by the policy completely unaffecting the future (hmmm... is this a big assumption actually?).
 
-**The FC-PG doesn't necessarily have lower variance than classical PG, because of the importance weighting**, the countermeasure to this is to study an estimator that makes the ratio equal to 1, meaning that the action is completely independent of the statistic $$\phi_t$$, i.e. $$p(a | X_t, \phi_t) = \pi(a | X_t)$$. And this is what leads us to **CCA-PG**, i.e. counterfactual gradient estimate.
+
+
+**The FC-PG doesn't necessarily have lower variance than classical PG, because of the importance weighting**, the countermeasure to this is to study an estimator that makes the ratio equal to 1, meaning that the action is completely independent of the statistic $\phi_t$, ie $p(a \vert X_t, \phi_t) = \pi(a \vert X_t)$. And this is what leads us to **CCA-PG**, i.e. counterfactual gradient estimate.
 
 **Theorem 2. CCA-PG.** Interesting theoretical result here is that the variance of CCA is at most the variance of the classical policy gradient and it has no bias, the only condition is that $$A_t$$ is independent of $\phi_t$. 
 
 
-**How do we estimate** $\phi_t$? This paper proposes three methods, the interesting result is `Theorem 3.`. We consider a general variable $$Y_t$$ that is a function of the whole trajectory (known in hindsight) if we learn a generative model with latent variable $\epsilon_t$ such that $\epsilon_t \ind A_t$, such that we compute by marginalizing out $\epsilon_t$
+**How do we estimate** $\phi_t$? This paper proposes three methods, the interesting result is `Theorem 3.`. We consider a general variable $Y_t$ that is a function of the whole trajectory (known in hindsight) if we learn a generative model with latent variable $\epsilon_t$ such that $\epsilon_t \ind A_t$, such that we compute by marginalizing out $\epsilon_t$
 
-$$p(Y_t | A_t, X_t) = \int p(\epsilon_t | X_t) p(Y_t | X_t, A_t, \epsilon_t) d\epsilon_t
+$$
+p(Y_t \vert A_t, X_t) = \int p(\epsilon_t \vert X_t) p(Y_t \vert X_t, A_t, \epsilon_t) d\epsilon_t
 $$
 
-Note, we are allowed to do so because of independence, but $Y_t$ is not assumed to be independent from the action. This probabilistic model induces the posterior $p(\epsilon_t | A_t, X_t, Y_t)$, if we sample $\phi_t$ from this posterior, then it's going to be conditionally independent of $A_t$ given $X_t$. This is a bit weird, since the posterior conditions on the action. But as it turns out, 1 sample is conditionally independent but a collection of samples wouldn't be, i.e. a single sample form the posterior recovers conditional independence properties of the prior.
+Note, we are allowed to do so because of independence, but $Y_t$ is not assumed to be independent from the action. This probabilistic model induces the posterior $p(\epsilon_t \vert A_t, X_t, Y_t)$, if we sample $\phi_t$ from this posterior, then it's going to be conditionally independent of $A_t$ given $X_t$. This is a bit weird, since the posterior conditions on the action. But as it turns out, 1 sample is conditionally independent but a collection of samples wouldn't be, i.e. a single sample form the posterior recovers conditional independence properties of the prior.
 
-**Corollary 1.** I don't understand this really, it's basically taking the conditional expectation of $V(X_t, \epsilon_t)$ with respect to the distribution $p(\epsilon_t | X_t, A_t, Y_t)$, and somehow this results in obtaining $V(X_t, A_t, Y_t)$, the formula is correct, but I don't get the intuition because normally it's only $V(X_t )$ how the value is defined, **Corrolary 2** is a similar story. 
+**Corollary 1.** I don't understand this really, it's basically taking the conditional expectation of $V(X_t, \epsilon_t)$ with respect to the distribution $p(\epsilon_t \vert X_t, A_t, Y_t)$, and somehow this results in obtaining $V(X_t, A_t, Y_t)$, the formula is correct, but I don't get the intuition because normally it's only $V(X_t )$ how the value is defined, **Corrolary 2** is a similar story. 
 
 **Learning CCA with Generative Models.** Figures, we need a generative model, so the first idea that comes to mind for modelling the posterior are Variational Autoencoders.
 
-**Model-free approach to learning CCA.** Method related to domain-adversarial training techniques (whatever that is). Two objectives guide the learning signal: (1) $V(X_t, \phi_t)$ should be predictive of the outcome. (2) encourage $\phi_t$ to be conditionally independent of the outcome, this is done by simply minimizing the KL divergence between action classifiers $p(A_t | X_t)$ and $p(A_t | X_t, \phi_t)$, obviously this is only 0 if $A_t \ind \phi_t$.
+**Model-free approach to learning CCA.** Method related to domain-adversarial training techniques (whatever that is). Two objectives guide the learning signal: (1) $V(X_t, \phi_t)$ should be predictive of the outcome. (2) encourage $\phi_t$ to be conditionally independent of the outcome, this is done by simply minimizing the KL divergence between action classifiers $p(A_t \vert X_t)$ and $p(A_t \vert X_t, \phi_t)$, obviously this is only 0 if $A_t \ind \phi_t$. 
 
 
 **Practical implementation.** They use an RNN so that the algorithm is applicable to POMDPs. A `hindsight network` is used for predicting $\phi_t$ and a `hindsight preidctor` that outputs a distribution over $A_t$ and is used to enforce the independence condition.

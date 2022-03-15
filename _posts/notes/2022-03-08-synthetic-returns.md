@@ -7,6 +7,8 @@ layout: post
 The problem of credit assignment is a long-lasting issue in reinforcement learning. In short, it's about which action is actually "caused" the reward in the future. Here I am looking at two papers that address this problem.
 
 * Synthetic Returns for Long-Term Credit Assignment 
+* Counterfactual Credit Assignment
+
 
 $$\newcommand{\ind}{\perp\!\!\!\!\perp} 
 $$

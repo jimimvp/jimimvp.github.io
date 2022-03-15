@@ -95,6 +95,10 @@ Note, we are allowed to do so because of independence, but $Y_t$ is not assumed 
 
 **Practical implementation.** They use an RNN so that the algorithm is applicable to POMDPs. A `hindsight network` is used for predicting $\phi_t$ and a `hindsight preidctor` that outputs a distribution over $A_t$ and is used to enforce the independence condition.
 
+<div class="d-flex justify-content-center">
+    <img src="../../assets/counteractual_baseline_arch.png"  class="w-75">
+</div>
+
 
 ## Causality
 

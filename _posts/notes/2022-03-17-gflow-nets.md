@@ -37,19 +37,25 @@ I am skipping **Prop 1.** for now, there is some weirdness happening there with 
 
 
 **Seeing MDP as a Flow network.** We can leverage the DAG structure of the MDP and learn a flow $F$, where we write $F(s,a)$ for flow going from $s \mapsto s'$ and $F(s)$ for total flow in $s$. We look at the initial state $s_0$ as the root node (source) that has an in-flow $Z$  and one sink for each leaf node (sink) with out-flow $R(x)$. The flow conditions need to be satisfied, meaning that the incoming flow in a node needs to be equal the outgoing flow (no node-state can generate additional flow). This is simplified when we assume 0 reward for internal nodes and only receiving reward at the terminal states (sinks). There is a close connection of these flow consistency equations and the standard value function in RL, there is also a recursive formulation, the difference seems to be that the expectation of the flow is not taken? The flow consistency can be simply written as
+
 $$ \sum_{s,a: T(s,a)=s'} F(s,a) = R(s') + \sum_{a' \in \mathcal{A}(s')} F(s', a')
 $$
 
 
 **Proposition 2., i.e. flow formulation makes sense and we obtain the densities.** This is a nice little piece of theory. Let $\pi(s)$ denote the probability of landing in state $s$ when starting from $s_0$ and let $x$ denote a terminal state. It shows that if we define the policy as
+
 $$ \pi(a \vert s) = \frac{F(s,a)}{F(s)},
 $$
+
 which basically says that we prioritize actions that have higher flow, remember that $F(s,a) = F(s)$. Furthermore, we obtain other interesting results that are useful, the probability of visiting a state is
+
 $$ \pi(s) = \frac{F(s)}{F(s_0)},
 $$
+
 where the flow in the initial state $s_0 = \sum_{x \in \mathcal{X}} R(x)$, i.e. sum of all terminal rewards.
 Moreover, the probability of ending in the terminal state $x$ is
-$$ \pi(x) = \frac{R(x)}{\sum_{x' \in \mathcal{X} R(x')}
+
+$$ \pi(x) = \frac{R(x)}{\sum_{x' \in \mathcal{X} R(x')}}
 $$
 `todo: check proof`.
 

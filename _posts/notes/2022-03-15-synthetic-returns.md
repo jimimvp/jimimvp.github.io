@@ -10,10 +10,6 @@ The problem of credit assignment is a long-lasting issue in reinforcement learni
 * Counterfactual Credit Assignment
 
 
-$$\newcommand{\ind}{\perp\!\!\!\!\perp} 
-$$
-
-
 # Synthetic Returns for Long-Term Credit Assignment (24th Feb 2021)
 
 1-step TD error approach to learning suffers with delayed rewards with long periods or when between the action and reward there are uncontrollable events that contribute.

@@ -29,6 +29,7 @@ navbar-links:
       - Causality: /causality
       - Reinforcement Learning: /rl
       - Machine Learning: /ml
+  Books: "/book-recs" 
 # 
 # Flags below are optional
 #

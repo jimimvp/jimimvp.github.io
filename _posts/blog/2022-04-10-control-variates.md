@@ -3,8 +3,6 @@ title: Variance Reduction via Control Variates
 categories: blog
 layout: math_post
 ---
-## Control Variates
-
 This is one of the most typical approaches to reducing variance of MC estimates. Consider the setup where we want to estimate $\E[f(x)]$ with MC, imagine that we have access to a function $h(x)$, now we can compute the expectation of the difference $\E[f(x) - h(x)]$. This might not be that interesting, since by linearity of expectation we would arrive to just $\E[f(x)] - \E[h(x)]$, but things get interesting when we estimate the quantity via MC
 
 $$

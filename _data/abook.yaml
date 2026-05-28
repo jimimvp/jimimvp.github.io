@@ -70,6 +70,12 @@
   image: https://m.media-amazon.com/images/I/51qxKOxzJuL._SY445_SX342_.jpg
   link: "https://www.amazon.de/dp/0063032376?tag=mvlast-21"
 
+- title: "Algorithms to Live By"
+  author: "Brian Christian, Tom Griffiths"
+  description: "Finally, a self-help book for people who think in Big-O notation. Christian and Griffiths map everyday decisions — when to stop apartment-hunting, how to sort your closet, whether to explore or exploit at restaurants — onto well-studied CS algorithms. You'll never feel guilty about procrastinating again once you learn it's just a valid scheduling heuristic."
+  image: https://m.media-amazon.com/images/I/51JsPVH6VxL._SY445_SX342_.jpg
+  link: "https://www.amazon.de/dp/1250118360?tag=mvlast-21"
+
 - title: "How to Change Your Mind"
   author: "Michael Pollan"
   description: "Pollan — a food writer — drops acid for science and comes back with a surprisingly rigorous history of psychedelic research. Equal parts neuroscience, memoir and cultural history, it makes a compelling case that sometimes the best way to understand consciousness is to thoroughly scramble it."

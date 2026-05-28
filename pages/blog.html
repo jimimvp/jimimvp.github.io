@@ -68,7 +68,10 @@ permalink: /blog
               {% endif %}
             </a>
           </h2>
-          <div class="blog-entry__date">{{ post.date | date: "%d %B %Y" }}</div>
+          {% assign words = post.content | number_of_words %}
+          {% assign mins = words | divided_by: 200 %}
+          {% if mins < 1 %}{% assign mins = 1 %}{% endif %}
+          <div class="blog-entry__date">{{ post.date | date: "%d %B %Y" }} &middot; {{ mins }} min read</div>
           <div class="blog-entry__excerpt">{{ post.excerpt }}</div>
         </li>
       {% endif %}

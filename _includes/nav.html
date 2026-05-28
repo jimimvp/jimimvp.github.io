@@ -111,5 +111,32 @@
         el.classList.add('is-visible');
       });
     }
+
+    // BibTeX cite buttons
+    document.querySelectorAll('.cite-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var bib = btn.getAttribute('data-bibtex');
+        if (!bib) return;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(bib).then(function () {
+            btn.textContent = 'copied!';
+            setTimeout(function () { btn.textContent = 'cite'; }, 1500);
+          });
+        } else {
+          window.prompt('Copy BibTeX:', bib);
+        }
+      });
+    });
+
+    // Back to top button
+    var topBtn = document.querySelector('[data-back-to-top]');
+    if (topBtn) {
+      window.addEventListener('scroll', function () {
+        topBtn.classList.toggle('is-visible', window.scrollY > 600);
+      }, { passive: true });
+      topBtn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
   });
 </script>

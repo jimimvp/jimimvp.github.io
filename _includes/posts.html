@@ -3,6 +3,12 @@
 <div class="card-list">
   {% for post in site.posts %}
     {% if post.categories contains 'research' %}
+      {% capture bibtex %}@inproceedings{vlastelica{{ post.date | date: "%Y" }},
+  title={ {{- post.title -}} },
+  author={ {{- post.authors -}} },
+  booktitle={ {{- post.venue -}} },
+  year={ {{- post.date | date: "%Y" -}} }
+}{% endcapture %}
       <article class="card animate-on-scroll{% if post.featured %} card--featured{% endif %}">
         {% if post.image %}
           <a class="card__media" href="{{ post.url | relative_url }}">
@@ -26,6 +32,7 @@
             {% if post.code %}<li><a href="{{ post.code }}">code</a></li>{% endif %}
             {% if post.poster %}<li><a href="{{ post.poster }}">poster</a></li>{% endif %}
             {% if post.slides %}<li><a href="{{ post.slides }}">slides</a></li>{% endif %}
+            <li><button class="cite-btn" type="button" aria-label="Copy BibTeX citation" data-bibtex="{{ bibtex | xml_escape }}">cite</button></li>
           </ul>
           <div class="card__excerpt">{{ post.excerpt }}</div>
         </div>

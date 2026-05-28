@@ -22,7 +22,7 @@ avatar: images/profile.jpg
 
 
 navbar-links:
-  Projects: "/#projects"
+  Research: "/#projects"
   Blog/Notes: /blog
   Resources:
       - Causality: /causality

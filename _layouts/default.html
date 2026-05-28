@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<script>
+  (function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)})();
+</script>
 <head>
   {% if site.google_analytics and jekyll.environment == 'production' %}
   {% include analytics.html %}

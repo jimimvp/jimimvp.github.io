@@ -1,9 +1,9 @@
-<h2 id="projects" class="section-heading">Research</h2>
+<h2 id="projects" class="section-heading animate-on-scroll">Research</h2>
 
 <div class="card-list">
   {% for post in site.posts %}
     {% if post.categories contains 'research' %}
-      <article class="card">
+      <article class="card animate-on-scroll{% if post.featured %} card--featured{% endif %}">
         {% if post.image %}
           <a class="card__media" href="{{ post.url | relative_url }}">
             <img src="{{ '/tn' | append: post.image | relative_url }}" alt="" loading="lazy" decoding="async">
@@ -34,12 +34,12 @@
   {% endfor %}
 </div>
 
-<h2 id="side-projects" class="section-heading">Side Projects</h2>
+<h2 id="side-projects" class="section-heading animate-on-scroll">Side Projects</h2>
 
 <div class="card-list">
   {% for post in site.posts %}
     {% if post.categories contains 'side-project' %}
-      <article class="card">
+      <article class="card animate-on-scroll">
         {% if post.image %}
           <a class="card__media" href="{{ post.url | relative_url }}">
             <img src="{{ '/tn' | append: post.image | relative_url }}" alt="" loading="lazy" decoding="async">

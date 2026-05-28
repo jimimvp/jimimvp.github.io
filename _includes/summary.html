@@ -1,64 +1,77 @@
 <p>
-Hi, I am a research scientist at Meta Super Intelligence Labs working on post-training.
-<p>
-Academically, I was a postdoctoral researcher at the <a href={{site.data.links.eth}}> ETH AI Center</a>,  under supervision of 
-of Andreas Krause, Marco Hutter and Bernhard Schoelkopf.
-I completed my PhD degree <em>summa cum laude</em>, examined by Georg Martius, Peter Dayan, Mathias Niepert and Matthias Hein, at the <a href={{site.data.links.mpi}}> Max Planck Institute for Intelligent Systems </a> in Tuebingen, Germany as part of the International Max Planck Research School for Intelligent Systems. 
-My thesis advisory committee consisted of Georg Martius, Peter Dayan, Michael Muehlebach, with my primary supervisor being Georg Martius.
-In addition, I possess a masters degree in computer science with a machine learning focus from the Karlsruhe Institute of Technology, Karlsruhe, Germany and a bachelors degree in computer science from the University of Zagreb, Croatia.
+Hi, I am a member of technical staff at Project Prometheus.
 </p>
 
 <p>
-In 2017 I was fortunate enough to have received a research fellowship with the Blue Brain Project in Geneva, Switzerland, 
-where I came into contact with neuroscience.
-In 2021 I spent some time at <b>Amazon</b> as an applied scientist intern doing work on variational inference, reinforcement learning and NLP in collaboration with Patrick Ernst and Gyuri Szarvas.
-I spent part of 2022 at <b>DeepMind</b> hosted by Kimberly Stachenfeld in Peter Battaglia's group working on diffusion generative modelling for building better optimizers in close collaboration with Arnaud Doucet.
-In 2024 I was visiting <b>Meta GenAI</b> Zurich, where I worked on building more efficient large scale diffusion generative models.
+Academically, I was a postdoctoral researcher at the <a href="{{ site.data.links.eth }}">ETH AI Center</a>, under the supervision of Andreas Krause, Marco Hutter and Bernhard Schoelkopf.
+I completed my PhD degree <em>summa cum laude</em>, examined by Georg Martius, Peter Dayan, Mathias Niepert and Matthias Hein, at the <a href="{{ site.data.links.mpi }}">Max Planck Institute for Intelligent Systems</a> in Tuebingen, Germany as part of the International Max Planck Research School for Intelligent Systems.
+My thesis advisory committee consisted of Georg Martius, Peter Dayan, and Michael Muehlebach, with my primary supervisor being Georg Martius.
+In addition, I hold a master's degree in computer science with a machine learning focus from the Karlsruhe Institute of Technology, Germany, and a bachelor's degree in computer science from the University of Zagreb, Croatia.
 </p>
 
 <p>
-My research interests revolve around principled methods for discovery and self-improvement - creating intelligence that can continually adapt and become 
-more efficient in learning and extracting new knowledge. To this end, I gained rich experience in several sub-areas of machine learning such as reinforcement learning
-and large generative models as well as lead several efforts in academic and industrial settings. 
-Some of my more recent efforts are centered on post-training for agentic LLMs and distributional optimization in diffusion and flow matching models.
+In 2017 I was fortunate to receive a research fellowship with the Blue Brain Project in Geneva, Switzerland, where I came into contact with neuroscience.
+In 2021 I spent some time at <strong>Amazon</strong> as an applied scientist intern working on variational inference, reinforcement learning and NLP in collaboration with Patrick Ernst and Gyuri Szarvas.
+I spent part of 2022 at <strong>DeepMind</strong>, hosted by Kimberly Stachenfeld in Peter Battaglia's group, working on diffusion generative modelling for building better optimizers in close collaboration with Arnaud Doucet.
+In 2024 I was visiting <strong>Meta GenAI</strong> Zurich, where I worked on building more efficient large-scale diffusion generative models.
+Most recently, I was a research scientist at <strong>Meta</strong> Super Intelligence Labs working on post-training.
 </p>
 
 <p>
-In my free time I enjoy playing guitar, reading opinionated books on various topics, and all sorts of sport activities.
+My research interests revolve around principled methods for discovery and self-improvement &mdash; creating intelligence that can continually adapt and become more efficient in learning and extracting new knowledge. To this end, I have gained rich experience in several sub-areas of machine learning such as reinforcement learning and large generative models, and have led several efforts in academic and industrial settings.
+Some of my more recent efforts are centered on post-training for agentic LLMs and distributional optimization in diffusion and flow-matching models.
 </p>
 
 <p>
-    I am actively looking for collaborators and research scientist roles, feel free to get in touch at:
+In my free time I enjoy playing guitar, reading opinionated books on various topics, and all sorts of sports activities.
 </p>
 
-<div style="
-  text-align:center;
-  display: inline-block;
-  font-family: 'Inter', sans-serif;
-  background: #36363c;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 8px 12px;
-  font-size: 15px;
-  color: #ffffff;
-  unicode-bidi: bidi-override;
-  direction: rtl;
-  user-select: all;
-  margin-bottom: 1em;
-">
-  moc[tod]liamg[ta]paciletsalv[tod]niram
+<p>
+Feel free to get in touch:
+</p>
+
+<div class="contact-block">
+  <button
+    type="button"
+    class="email-pill"
+    aria-label="Copy email address"
+    data-email-copy
+    data-email="marin.vlastelicap@gmail.com">moc[tod]liamg[ta]paciletsalv[tod]niram</button>
 </div>
 
+<ul class="social" aria-label="Social and academic profiles">
+  {% for sm in site.data.social_media %}
+    <li>
+      <a href="{{ sm.link }}" aria-label="{{ sm.name | default: 'External profile' }}" target="_blank" rel="noopener noreferrer">
+        <i class="{{ sm.favicon }}" aria-hidden="true"></i>
+      </a>
+    </li>
+  {% endfor %}
+</ul>
 
-<!-- <p style="text-align:center">
-    /
-    {%for profile in site.data.profiles %}
-    <a href="{{profile.link}}">{{profile.name}}</a> &nbsp;/&nbsp;
-    {% endfor %}
-</p> -->
-
-<div style="text-align:center">
-{%for sm in site.data.social_media%}
-    <a href="{{sm.link}}"><i class="{{sm.favicon}}"></i></a>  &emsp;
-{%endfor%}
-</div>
+<script>
+  (function () {
+    document.querySelectorAll('[data-email-copy]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var email = btn.getAttribute('data-email');
+        if (!email) return;
+        var done = function () {
+          btn.setAttribute('data-copied', 'true');
+          var prevLabel = btn.getAttribute('aria-label');
+          btn.setAttribute('aria-label', 'Email copied');
+          setTimeout(function () {
+            btn.removeAttribute('data-copied');
+            btn.setAttribute('aria-label', prevLabel);
+          }, 1500);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(email).then(done, function () {
+            window.prompt('Copy this email:', email);
+          });
+        } else {
+          window.prompt('Copy this email:', email);
+        }
+      });
+    });
+  })();
+</script>

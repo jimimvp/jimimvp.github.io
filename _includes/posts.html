@@ -1,131 +1,71 @@
+<h2 id="projects" class="section-heading">Research</h2>
 
-
-<hr/>
-
-<div class="row ">
-    <div class="col-lg-3   mr-auto" style="padding:2%;vertical-align:middle">
-
-    </div>
-    <div class="col-lg-6  mr-auto" style="padding:2%;vertical-align:middle">
-        <div  class="section"><h1 id="projects">Research</h1></div>
+<div class="card-list">
+  {% for post in site.posts %}
+    {% if post.categories contains 'research' %}
+      <article class="card">
+        {% if post.image %}
+          <a class="card__media" href="{{ post.url | relative_url }}">
+            <img src="{{ '/tn' | append: post.image | relative_url }}" alt="" loading="lazy" decoding="async">
+          </a>
+        {% endif %}
+        <div class="card__body">
+          <h3 class="card__title">{{ post.title }}</h3>
+          {% if post.subtitle %}
+            <p class="card__subtitle">{{ post.subtitle }}</p>
+          {% endif %}
+          <p class="card__meta">
+            {{ post.authors }}<br>
+            <em>{{ post.venue }}</em>, {{ post.date | date: "%Y" }}
+          </p>
+          <ul class="card__links">
+            {% if post.paper %}<li><a href="{{ post.paper }}">paper</a></li>{% endif %}
+            {% if post.article %}<li><a href="{{ post.article }}">article</a></li>{% endif %}
+            {% if post.arxiv %}<li><a href="{{ post.arxiv }}">arxiv</a></li>{% endif %}
+            {% if post.video %}<li><a href="{{ post.video }}">video</a></li>{% endif %}
+            {% if post.code %}<li><a href="{{ post.code }}">code</a></li>{% endif %}
+            {% if post.poster %}<li><a href="{{ post.poster }}">poster</a></li>{% endif %}
+            {% if post.slides %}<li><a href="{{ post.slides }}">slides</a></li>{% endif %}
+          </ul>
+          <div class="card__excerpt">{{ post.excerpt }}</div>
+        </div>
+      </article>
+    {% endif %}
+  {% endfor %}
 </div>
 
-<hr/>
+<h2 id="side-projects" class="section-heading">Side Projects</h2>
 
-{% for post in site.posts %}
-{% for cat in post.categories %}
-{% if cat == 'research' %}
-<div class="row justify-content-md-center">
-
-<div class="col-lg-3 order-1 order-lg-1  mr-auto" style="padding:2%;vertical-align:middle">
-    {%if post.image%}
-    <img class="img-fluid" src="/tn{{post.image}}" alt="project image"  />
+<div class="card-list">
+  {% for post in site.posts %}
+    {% if post.categories contains 'side-project' %}
+      <article class="card">
+        {% if post.image %}
+          <a class="card__media" href="{{ post.url | relative_url }}">
+            <img src="{{ '/tn' | append: post.image | relative_url }}" alt="" loading="lazy" decoding="async">
+          </a>
+        {% endif %}
+        <div class="card__body">
+          <h3 class="card__title">{{ post.title }}</h3>
+          {% if post.subtitle %}
+            <p class="card__subtitle">{{ post.subtitle }}</p>
+          {% endif %}
+          <p class="card__meta">
+            {{ post.authors }}<br>
+            {{ post.date | date: "%Y" }}
+          </p>
+          <ul class="card__links">
+            {% if post.paper %}<li><a href="{{ post.paper }}">paper</a></li>{% endif %}
+            {% if post.article %}<li><a href="{{ post.article }}">article</a></li>{% endif %}
+            {% if post.arxiv %}<li><a href="{{ post.arxiv }}">arxiv</a></li>{% endif %}
+            {% if post.video %}<li><a href="{{ post.video }}">video</a></li>{% endif %}
+            {% if post.code %}<li><a href="{{ post.code }}">code</a></li>{% endif %}
+            {% if post.poster %}<li><a href="{{ post.poster }}">poster</a></li>{% endif %}
+            {% if post.slides %}<li><a href="{{ post.slides }}">slides</a></li>{% endif %}
+          </ul>
+          <div class="card__excerpt">{{ post.excerpt }}</div>
+        </div>
+      </article>
     {% endif %}
+  {% endfor %}
 </div>
-<div class="col-lg-7 order-0 order-lg-1 " style="padding:2.5%" >
-    <h2>{{post.title}}</h2>
-    <br>
-    <h3>{{post.subtitle}}</h3>
-    <br>
-    {{post.authors}}
-    <br>
-    <em>{{post.venue}}</em>, {{ post.date | date: "%Y" }}
-    <br>
-    {% if post.paper %}
-    <a href="{{post.paper}}">paper</a> /
-    {% endif %}
-    {% if post.article %}
-    <a href="{{post.article}}">article</a> /
-    {% endif %}
-    {% if post.arxiv %}
-    <a href="{{post.arxiv}}">arxiv</a> /
-    {% endif %}
-    {% if post.video %}
-    <a href="{{post.video}}">video</a> /
-    {% endif %}
-    {% if post.code %}
-    <a href="{{post.code}}">code</a> /
-    {% endif %}
-    {% if post.poster %}
-    <a href="{{post.poster}}">poster</a> /
-    {% endif %}
-    {% if post.slides %}
-    <a href="{{post.slides}}">slides</a> /
-    {% endif %}
-    <p></p>
-    {{ post.excerpt }}
-</div>
-
-
-</div>
-<br>
-{% endif %}
-{% endfor %}
-{% endfor %}
-
-
-
-<hr/>
-
-<div class="row ">
-    <div class="col-lg-3   mr-auto" style="padding:2%;vertical-align:middle">
-
-    </div>
-    <div class="col-lg-6  mr-auto" style="padding:2%;vertical-align:middle">
-        <div  class="section"><h1 id="side-projects">Side Projects</h1></div>
-</div>
-
-
-<hr/>
-
-
-{% for post in site.posts %}
-{% for cat in post.categories %}
-{% if cat == 'side-project' %}
-<div class="row justify-content-md-center">
-
-<div class="col-lg-3 order-1 order-lg-1  mr-auto" style="padding:2%;vertical-align:middle">
-    {%if post.image%}
-    <img class="img-fluid" src="/tn{{post.image}}" alt="project image"  />
-    {% endif %}
-</div>
-<div class="col-lg-7 order-0 order-lg-1 " style="padding:2.5%" >
-    <h2>{{post.title}}</h2>
-    <br>
-    <h3>{{post.subtitle}}</h3>
-    <br>
-    {{post.authors}}
-    <br>
-    {{ post.date | date: "%Y" }}
-    <br>
-    {% if post.paper %}
-    <a href="{{post.paper}}">paper</a> /
-    {% endif %}
-    {% if post.article %}
-    <a href="{{post.article}}">article</a> /
-    {% endif %}
-    {% if post.arxiv %}
-    <a href="{{post.arxiv}}">arxiv</a> /
-    {% endif %}
-    {% if post.video %}
-    <a href="{{post.video}}">video</a> /
-    {% endif %}
-    {% if post.code %}
-    <a href="{{post.code}}">code</a> /
-    {% endif %}
-    {% if post.poster %}
-    <a href="{{post.poster}}">poster</a> /
-    {% endif %}
-    {% if post.slides %}
-    <a href="{{post.slides}}">slides</a> /
-    {% endif %}
-    <p></p>
-    {{ post.excerpt }}
-</div>
-
-
-</div>
-<br>
-{% endif %}
-{% endfor %}
-{% endfor %}

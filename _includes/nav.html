@@ -1,28 +1,28 @@
-<nav class="navbar navbar-expand-lg bg-dark navbar-dark  fixed-top {% if page.nav-short %}top-nav-short-permanent{% else %}top-nav-regular{% endif %}">
+<nav class="navbar-blur" aria-label="Primary">
 
   {% if site.title-img %}
-    <a class="navbar-brand navbar-brand-logo" href="{{ '' | absolute_url }}"><img alt="{{ site.title }} Logo" src="{{ site.title-img | relative_url}}"/></a>
+    <a class="navbar-brand" href="{{ '/' | absolute_url }}"><img alt="{{ site.title }} Logo" src="{{ site.title-img | relative_url }}"></a>
   {% else %}
-    <a class="navbar-brand" href="{{ '' | absolute_url }}">{{ site.title }}</a>
+    <a class="navbar-brand" href="{{ '/' | absolute_url }}">{{ site.title }}</a>
   {% endif %}
 
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation" data-nav-toggle>
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto">
+  <div class="navbar-collapse" id="navbar-menu">
+    <ul class="navbar-nav">
       {% for link in site.navbar-links %}
         {% if link[1].first %}
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"   data-bs-toggle="dropdown"  aria-expanded="false">{{ link[0] }}</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" aria-haspopup="true" aria-expanded="false" data-nav-dropdown>{{ link[0] }}</a>
+            <ul class="dropdown-menu">
               {% for childlink in link[1] %}
                 {% for linkparts in childlink %}
-                  <a class="dropdown-item" href="{{ linkparts[1] | relative_url }}">{{ linkparts[0] }}</a>
+                  <li><a class="dropdown-item" href="{{ linkparts[1] | relative_url }}">{{ linkparts[0] }}</a></li>
                 {% endfor %}
               {% endfor %}
-            </div>
+            </ul>
           </li>
         {% else %}
           <li class="nav-item">
@@ -30,16 +30,40 @@
           </li>
         {% endif %}
       {% endfor %}
-      {% if site.post_search %}
-        <li class="nav-item">
-          <a class="nav-link" id="nav-search-link" href="#" title="Search">
-            <span id="nav-search-icon" class="fa fa-search"></span>
-            <span id="nav-search-text">Search</span>
-          </a>
-        </li>
-      {% endif %}
     </ul>
   </div>
 </nav>
 
-<!-- {% include search.html %} -->
+<script>
+  (function () {
+    var toggler = document.querySelector('[data-nav-toggle]');
+    var collapse = document.getElementById('navbar-menu');
+    if (toggler && collapse) {
+      toggler.addEventListener('click', function () {
+        var open = collapse.classList.toggle('show');
+        toggler.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+
+    document.querySelectorAll('[data-nav-dropdown]').forEach(function (trigger) {
+      trigger.addEventListener('click', function (e) {
+        e.preventDefault();
+        var menu = trigger.parentElement.querySelector('.dropdown-menu');
+        if (!menu) return;
+        var isOpen = menu.classList.toggle('show');
+        trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        document.querySelectorAll('.dropdown-menu.show').forEach(function (other) {
+          if (other !== menu) other.classList.remove('show');
+        });
+      });
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.dropdown')) {
+        document.querySelectorAll('.dropdown-menu.show').forEach(function (m) {
+          m.classList.remove('show');
+        });
+      }
+    });
+  })();
+</script>

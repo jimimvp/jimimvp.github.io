@@ -1,20 +1,23 @@
-
-- link: https://scholar.google.com/citations?user=bmOnRUcAAAAJ&hl=en
+- name: Google Scholar
+  link: https://scholar.google.com/citations?user=bmOnRUcAAAAJ&hl=en
   favicon: ai ai-google-scholar ai-2x
-- 
+
+- name: Curriculum Vitae
   link: https://drive.google.com/file/d/1Z6KF9fbO54QafT1Xv8OdpE19coDouabs/view?usp=sharing
-  favicon: ai ai-cv fa-2x 
--
-  link:  https://twitter.com/vlastelicap
+  favicon: ai ai-cv fa-2x
+
+- name: Twitter
+  link: https://twitter.com/vlastelicap
   favicon: fab fa-twitter fa-2x
--
+
+- name: LinkedIn
   link: https://www.linkedin.com/in/mvlastelica/
   favicon: fab fa-linkedin fa-2x
-- 
-  link:  https://medium.com/@marinvp
+
+- name: Medium
+  link: https://medium.com/@marinvp
   favicon: fab fa-medium fa-2x
 
-- link: https://github.com/jimimvp
+- name: GitHub
+  link: https://github.com/jimimvp
   favicon: fab fa-github fa-2x
-
-

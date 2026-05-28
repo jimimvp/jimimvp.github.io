@@ -1,26 +1,28 @@
 ---
 layout: default
+full_bleed: true
 title: "Book Recommendations"
 permalink: /book-recs
 ---
 
-<div class="container">
-    <div class="row">
-      <div class="col-12 col-sm-8 col-lg-6 offset-0 offset-lg-3 offset-sm-2">
-        <ul class="list-group">
-          {% for book in site.data.abook %}
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <div>  
-                <a href="{{book.link}}"> <h2>{{ book.title }}</h2> </a>
-                <br>
-                {{ book.description }}
-            </div>
-              <div class="img-parent">
-                {{ book.image }}
-            </div>
-            </li>
-            {% endfor %}
-        </ul>
-      </div>
-    </div>
-  </div>
+<main class="page">
+  <header>
+    <h1>Book Recommendations</h1>
+    <p>A running list of books I have enjoyed across machine learning, science, philosophy, and life. Links go to the relevant Amazon page.</p>
+  </header>
+
+  <ul class="book-list">
+    {% for book in site.data.abook %}
+      <li class="book-item">
+        <div class="book-item__body">
+          <h2 class="book-item__title"><a href="{{ book.link }}" target="_blank" rel="noopener noreferrer">{{ book.title }}</a></h2>
+          {% if book.author %}<div class="book-item__author">{{ book.author }}</div>{% endif %}
+          <div class="book-item__description">{{ book.description }}</div>
+        </div>
+        {% if book.image %}
+          <div class="book-item__image">{{ book.image }}</div>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</main>

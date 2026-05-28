@@ -1,25 +1,24 @@
 ---
 layout: default
+full_bleed: true
 permalink: /blog
 ---
 
-{%include mathjax.html %}
+{% include mathjax.html %}
 
 <div class="d-none">
     $$
     \newcommand{\ind}{\perp\!\!\!\!\perp}
-    
+
     \newcommand{\gG}{\mathcal{G}}
     \newcommand{\gH}{\mathcal{H}}
     \newcommand{\gD}{\mathcal{D}}
-    
+
     \newcommand{\sE}{\mathbb{E}}
     \newcommand{\E}{\mathbb{E}}
-    
-    
+
     \newcommand{\coloneqq}{&#x2254;}
-    
-    
+
     \newcommand{\E}{\mathbb{E}}
     \newcommand{\Ls}{\mathcal{L}}
     \newcommand{\R}{\mathbb{R}}
@@ -34,70 +33,45 @@ permalink: /blog
     \newcommand{\Var}{\mathrm{Var}}
     \newcommand{\standarderror}{\mathrm{SE}}
     \newcommand{\Cov}{\mathrm{Cov}}
-    % Wolfram Mathworld says $L^2$ is for function spaces and $\ell^2$ is for vectors
-    % But then they seem to use $L^2$ for vectors throughout the site, and so does
-    % wikipedia.
     \newcommand{\normlzero}{L^0}
     \newcommand{\normlone}{L^1}
     \newcommand{\normltwo}{L^2}
     \newcommand{\normlp}{L^p}
     \newcommand{\normmax}{L^\infty}
-    
-    \newcommand{\parents}{Pa} % See usage in notation.tex. Chosen to match Daphne's book.
-    
-    
-    
+
+    \newcommand{\parents}{Pa}
     $$
-</div>    
-
-<i class="fas fa-sticky-note"  style="color: rgb(62, 118, 129);"></i> Note <i class="fas fa-blog"></i> Blog
-
-
-
-<div class="row">
-    <div class="offset-lg-4 col-lg-4" style="text-align: center;">
-        <h1>Blog Posts </h1>
-        <br>
-    </div>
 </div>
 
-{% for post in site.posts %}
-{% for cat in post.categories %}
-{% if cat == 'blog' %}
-<div class="row justify-content-md-left blog-post">
-    <div class="offset-lg-3 col-lg-6  mr-auto">
-        <a href="{{post.url}}" style="color: rgb(45, 66, 70);"> <h1>{{post.title}} <i class="fas fa-blog"></i>  </h1></a>
-        {{post.date | date: "%d. %B %Y"}}
-    </div>
-</div>
-<div class="row justify-content-md-left">
-    <div class="offset-lg-3 col-lg-6  mr-auto" style="vertical-align:middle">
-    {{post.excerpt}}
-    </div>
-</div>
+<main class="page">
+  <header class="blog-header">
+    <h1 class="blog-header__title">Writing</h1>
+    <p class="blog-header__legend">
+      <span><i class="fas fa-blog" aria-hidden="true"></i> Blog post</span>
+      <span><i class="fas fa-sticky-note" aria-hidden="true"></i> Note</span>
+    </p>
+  </header>
 
-
-<br>
-
-{% elsif cat =='note' %}
-
-<div class="row justify-content-md-left blog-post">
-    <div class="offset-lg-3 col-lg-6  mr-auto">
-        <a href="{{post.url}}" style="color:  rgb(45, 66, 70);"><h1>{{post.title}} <i class="fas fa-sticky-note"  style="color: rgb(62, 118, 129);"></i></h1></a>
-        {{post.date | date: "%d. %B %Y"}}
-    </div>
-</div>
-<div class="row justify-content-md-left">
-    <div class="offset-lg-3 col-lg-6  mr-auto" style="vertical-align:middle">
-    {{post.excerpt}}
-    </div>
-</div>
-
-
-<br>
-
-{% endif %}
-{% endfor %}
-{% endfor %}
-
-
+  <ul class="blog-list">
+    {% for post in site.posts %}
+      {% if post.categories contains 'blog' or post.categories contains 'note' %}
+        {% assign is_note = false %}
+        {% if post.categories contains 'note' %}{% assign is_note = true %}{% endif %}
+        <li class="blog-entry">
+          <h2 class="blog-entry__title">
+            <a href="{{ post.url | relative_url }}">
+              {{ post.title }}
+              {% if is_note %}
+                <i class="fas fa-sticky-note icon" aria-label="Note"></i>
+              {% else %}
+                <i class="fas fa-blog icon" aria-label="Blog post"></i>
+              {% endif %}
+            </a>
+          </h2>
+          <div class="blog-entry__date">{{ post.date | date: "%d %B %Y" }}</div>
+          <div class="blog-entry__excerpt">{{ post.excerpt }}</div>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</main>

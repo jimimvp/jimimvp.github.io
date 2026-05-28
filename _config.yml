@@ -14,8 +14,7 @@ defaults:
     values:
       layout: "default"
 
-# Short bio or description (displayed in the header)
-# description: the profile of an engineer, researcher and software developer
+description: "Marin Vlastelica - member of technical staff at Project Prometheus. Research in reinforcement learning and generative models."
 
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)

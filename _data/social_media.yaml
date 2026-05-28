@@ -18,6 +18,10 @@
   link: https://medium.com/@marinvp
   favicon: fab fa-medium fa-2x
 
+- name: Instagram
+  link: https://www.instagram.com/marin.vlast
+  favicon: fab fa-instagram fa-2x
+
 - name: GitHub
   link: https://github.com/jimimvp
   favicon: fab fa-github fa-2x

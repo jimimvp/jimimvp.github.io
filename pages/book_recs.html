@@ -20,7 +20,11 @@ permalink: /book-recs
           <div class="book-item__description">{{ book.description }}</div>
         </div>
         {% if book.image %}
-          <div class="book-item__image">{{ book.image }}</div>
+          <div class="book-item__image">
+            <a href="{{ book.link }}" target="_blank" rel="noopener noreferrer">
+              <img src="{{ book.image }}" alt="{{ book.title }} cover" loading="lazy">
+            </a>
+          </div>
         {% endif %}
       </li>
     {% endfor %}

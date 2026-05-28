@@ -1,83 +1,83 @@
 - title: Fooled By Randomness
   author: Nassim Nicholas Taleb
-  description: Ah, the classic, in this book Taleb talks about how random events are inherently unpredictable and that people are often fooled by thinking that their success for example is because of skill and not luck, which is oftentimes no the case. Definitely recommended read.
+  description: "Classic Taleb. We confuse luck for skill far more often than we think. A must-read."
   image: https://m.media-amazon.com/images/I/41kGxnB0JiL._SY445_SX342_.jpg
   link: "https://www.amazon.de/dp/0141031484?tag=mvlast-21"
 
 - title: "Probability and Finance: It's Only a Game!"
   author: Vladimir Vovk, Glen Schafer
-  description: This is a pretty interesting view on probability theory through game theory, proving some of the famous theorems without using any measure-theoretic concepts
+  description: "Probability theory rebuilt through game theory — no measure theory needed."
   image: https://m.media-amazon.com/images/I/41V4JFBFWBL._SY445_SX342_.jpg
   link: "https://www.amazon.de/dp/0471402265?tag=mvlast-21"
 
 - title: "The Book of Why"
   author: Judea Pearl
-  description: There was a lot of fuss made about this book. You can say that it's a very long advertisement for using causal reasoning rather than traditional statistics. Nevertheless, it's a nice read and Pearl gives compelling arguments accompanied by examples to why we should reason causally about the world. If you want a more rigorous introduction to causality, I would go for another book - i.e. this is not a textbook.
+  description: "Pearl's case for causal reasoning over statistics. Compelling examples, but more manifesto than textbook."
   image: https://m.media-amazon.com/images/I/41V1dRBVJJL._SY445_SX342_.jpg
   link: "https://amzn.to/3L8qV7H"
 
 - title: Antifragile
   author: Nassim Nicholas Taleb
-  description: In this book, Taleb describes what is the difference between fragility, i.e. being vulnerable to external influences and anti-fragility (the opposite). I'm in the process of finishing up this one.
+  description: "Some things break under stress, others get stronger. Taleb's framework for telling them apart."
   image: https://m.media-amazon.com/images/I/41HPFOJ+B7L._SY445_SX342_.jpg
   link: "https://www.amazon.de/dp/0141038225?tag=mvlast-21"
 
 - title: The Fall of Yugoslavia
   author: Svetozar
-  description: I read this one because I was interested in the mechanics behind the wars in Yugoslavia from the 90s, how it came to it and what were the underlying issues. This book does a good job of decomposing the underlying mechanisms.
+  description: "A clear-eyed breakdown of how Yugoslavia collapsed — the mechanisms, the politics, the escalation."
   image: https://m.media-amazon.com/images/I/51EQPMQJ4QL._SY445_SX342_.jpg
   link: "https://www.amazon.de/dp/1573921467?tag=mvlast-21"
 
 - title: Sustainable Energy without the Hot Air
   author: David MacKay
-  description: Easily one of the best books to understand energy consumption and how to get rid of fossil fuels. Besides being a master Bayesian, the late great David MacKay provides the data and statistics for energy production and consumption.
+  description: "The late David MacKay does the math on energy. No ideology, just numbers. One of the best on the topic."
   image: https://m.media-amazon.com/images/I/51SfhvGOjYL._SY445_SX342_.jpg
   link: "https://www.amazon.de/dp/0954452933?tag=mvlast-21"
 
 - title: The Black Swan
   author: Nassim Nicholas Taleb
-  description: Black swans are events that are unpredictable and have big repercussions on society or the individual, a nice read but also quite lengthy with long descriptions. Definitely a must read if you are a Taleb fan.
+  description: "On rare, unpredictable events that reshape everything. A bit long-winded but essential Taleb."
   image: https://m.media-amazon.com/images/I/41V5H5XRCPL._SY445_SX342_.jpg
   link: "https://www.amazon.de/dp/081297381X?tag=mvlast-21"
 
 - title: "12 Rules for Life"
   author: Jordan Peterson
-  description: I don't care if you land in the Peterson side of the court of somewhere else, I'm not a big fan of self-help books, but this one helped me through some dark times. It has a bit of a sciency flavor, which I like.
+  description: "Not usually a self-help person, but this one has a sciency flavor and helped me through some dark times."
   image: https://m.media-amazon.com/images/I/41kspFBwVxL._SY445_SX342_.jpg
   link: "https://amzn.to/3wAVMWv"
 
 - title: "Zero to One"
   author: Peter Thiel
-  description: "A simple one-liner: what does it take for a startup to succeed, what are great founder made of? Relatively easy read."
+  description: "What makes a startup actually succeed? Short, opinionated, and worth the few hours."
   image: https://m.media-amazon.com/images/I/41puYDYvYxL._SY445_SX342_.jpg
   link: "https://www.amazon.de/dp/0804139296?tag=mvlast-21"
 
 - title: "The Hard Thing About Hard Things"
   author: "Ben Horowitz"
-  description: "Another startup book that I read, Ben Horowitz does a good job describing his journey as a CEO with the leadership hurdles that he needed to tackle."
+  description: "Horowitz on the unglamorous side of being a CEO. Honest about the leadership problems nobody warns you about."
   image: https://m.media-amazon.com/images/I/51Ifl2MgiKL._SY445_SX342_.jpg
   link: "https://www.amazon.de/dp/0062273205?tag=mvlast-21"
 
 - title: "Narconomics"
   author: "Tom Wainwright"
-  description: "What if you ran a drug cartel like an MBA graduate? Turns out the cartels already do. Wainwright applies cold business logic — franchising, HR, CSR, supply chains — to the world's most ruthless industry, and the parallels are uncomfortably convincing."
+  description: "Business logic applied to drug cartels — franchising, HR, supply chains. The parallels are uncomfortably good."
   image: https://m.media-amazon.com/images/I/51myFr2GZGL._SY445_SX342_.jpg
   link: "https://www.amazon.de/dp/1610397703?tag=mvlast-21"
 
 - title: "Freakonomics"
   author: "Steven D. Levitt, Stephen J. Dubner"
-  description: "The book that made every dinner party guest think they're an economist. Levitt weaponizes incentive theory against sumo wrestlers, drug dealers and helicopter parents — and somehow makes regression analysis entertaining. A gateway drug to thinking about causality in everyday life."
+  description: "Incentive theory meets sumo wrestlers, drug dealers and helicopter parents. Makes you think about causality differently."
   image: https://m.media-amazon.com/images/I/51qxKOxzJuL._SY445_SX342_.jpg
   link: "https://www.amazon.de/dp/0063032376?tag=mvlast-21"
 
 - title: "Algorithms to Live By"
   author: "Brian Christian, Tom Griffiths"
-  description: "Finally, a self-help book for people who think in Big-O notation. Christian and Griffiths map everyday decisions — when to stop apartment-hunting, how to sort your closet, whether to explore or exploit at restaurants — onto well-studied CS algorithms. You'll never feel guilty about procrastinating again once you learn it's just a valid scheduling heuristic."
+  description: "Everyday decisions mapped onto CS algorithms — when to stop searching, how to sort, explore vs exploit. Surprisingly practical."
   image: https://m.media-amazon.com/images/I/51JsPVH6VxL._SY445_SX342_.jpg
   link: "https://www.amazon.de/dp/1250118360?tag=mvlast-21"
 
 - title: "How to Change Your Mind"
   author: "Michael Pollan"
-  description: "Pollan — a food writer — drops acid for science and comes back with a surprisingly rigorous history of psychedelic research. Equal parts neuroscience, memoir and cultural history, it makes a compelling case that sometimes the best way to understand consciousness is to thoroughly scramble it."
+  description: "A rigorous and personal look at psychedelic research — part neuroscience, part history, part memoir."
   image: https://m.media-amazon.com/images/I/51KwY3Au3uL._SY445_SX342_.jpg
   link: "https://www.amazon.de/dp/0735224153?tag=mvlast-21"

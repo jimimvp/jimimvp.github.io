@@ -57,3 +57,21 @@
   description: "Another startup book that I read, Ben Horowitz does a good job describing his journey as a CEO with the leadership hurdles that he needed to tackle."
   image: https://m.media-amazon.com/images/I/51Ifl2MgiKL._SY445_SX342_.jpg
   link: "https://www.amazon.de/dp/0062273205?tag=mvlast-21"
+
+- title: "Narconomics"
+  author: "Tom Wainwright"
+  description: "What if you ran a drug cartel like an MBA graduate? Turns out the cartels already do. Wainwright applies cold business logic — franchising, HR, CSR, supply chains — to the world's most ruthless industry, and the parallels are uncomfortably convincing."
+  image: https://m.media-amazon.com/images/I/51myFr2GZGL._SY445_SX342_.jpg
+  link: "https://www.amazon.de/dp/1610397703?tag=mvlast-21"
+
+- title: "Freakonomics"
+  author: "Steven D. Levitt, Stephen J. Dubner"
+  description: "The book that made every dinner party guest think they're an economist. Levitt weaponizes incentive theory against sumo wrestlers, drug dealers and helicopter parents — and somehow makes regression analysis entertaining. A gateway drug to thinking about causality in everyday life."
+  image: https://m.media-amazon.com/images/I/51qxKOxzJuL._SY445_SX342_.jpg
+  link: "https://www.amazon.de/dp/0063032376?tag=mvlast-21"
+
+- title: "How to Change Your Mind"
+  author: "Michael Pollan"
+  description: "Pollan — a food writer — drops acid for science and comes back with a surprisingly rigorous history of psychedelic research. Equal parts neuroscience, memoir and cultural history, it makes a compelling case that sometimes the best way to understand consciousness is to thoroughly scramble it."
+  image: https://m.media-amazon.com/images/I/51KwY3Au3uL._SY445_SX342_.jpg
+  link: "https://www.amazon.de/dp/0735224153?tag=mvlast-21"

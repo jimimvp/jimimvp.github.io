@@ -5,15 +5,15 @@ full_bleed: true
 
 <main class="page page--wide home">
   <section class="hero">
-    <img
-      class="hero__photo"
-      src="{{ '/images/profile.jpg' | relative_url }}"
-      alt="Portrait of {{ site.name }}"
-      width="240"
-      height="240"
-      loading="eager"
-      decoding="async">
     <div class="hero__intro">
+      <img
+        class="hero__photo"
+        src="{{ '/images/profile.jpg' | relative_url }}"
+        alt="Portrait of {{ site.name }}"
+        width="200"
+        height="200"
+        loading="eager"
+        decoding="async">
       <h1 class="hero__name">{{ site.name }}</h1>
       {% include summary.html %}
     </div>

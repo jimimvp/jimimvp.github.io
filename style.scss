@@ -339,21 +339,19 @@ span.highlight {
    ============================================================ */
 
 .hero {
-  display: grid;
-  grid-template-columns: 240px 1fr;
-  gap: 2.5rem;
-  align-items: start;
   margin-bottom: 3rem;
 }
 
 .hero__photo {
-  width: 100%;
-  max-width: 240px;
+  float: right;
+  width: 200px;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   object-fit: cover;
   display: block;
   box-shadow: var(--shadow);
+  margin: 0.25rem 0 1.25rem 2rem;
+  shape-outside: circle(50%);
 }
 
 .hero__name {
@@ -365,16 +363,17 @@ span.highlight {
   color: var(--text);
 }
 
-@media (max-width: 720px) {
-  .hero {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    text-align: left;
-  }
+.hero__intro::after {
+  content: '';
+  display: block;
+  clear: both;
+}
 
+@media (max-width: 600px) {
   .hero__photo {
-    max-width: 180px;
-    margin: 0 auto;
+    float: none;
+    width: 160px;
+    margin: 0 auto 1.5rem;
   }
 
   .hero__name {

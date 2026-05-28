@@ -1,60 +1,60 @@
 - title: Fooled By Randomness
   author: Nassim Nicholas Taleb
-  description: "Classic Taleb. We confuse luck for skill far more often than we think. A must-read."
+  description: Ah, the classic, in this book Taleb talks about how random events are inherently unpredictable and that people are often fooled by thinking that their success for example is because of skill and not luck, which is oftentimes no the case. Definitely recommended read.
   image: https://m.media-amazon.com/images/I/41kGxnB0JiL._SY445_SX342_.jpg
   link: "https://www.amazon.de/dp/0141031484?tag=mvlast-21"
 
 - title: "Probability and Finance: It's Only a Game!"
   author: Vladimir Vovk, Glen Schafer
-  description: "Probability theory rebuilt through game theory — no measure theory needed."
+  description: This is a pretty interesting view on probability theory through game theory, proving some of the famous theorems without using any measure-theoretic concepts
   image: https://m.media-amazon.com/images/I/41V4JFBFWBL._SY445_SX342_.jpg
   link: "https://www.amazon.de/dp/0471402265?tag=mvlast-21"
 
 - title: "The Book of Why"
   author: Judea Pearl
-  description: "Pearl's case for causal reasoning over statistics. Compelling examples, but more manifesto than textbook."
+  description: There was a lot of fuss made about this book. You can say that it's a very long advertisement for using causal reasoning rather than traditional statistics. Nevertheless, it's a nice read and Pearl gives compelling arguments accompanied by examples to why we should reason causally about the world. If you want a more rigorous introduction to causality, I would go for another book - i.e. this is not a textbook.
   image: https://m.media-amazon.com/images/I/41V1dRBVJJL._SY445_SX342_.jpg
   link: "https://amzn.to/3L8qV7H"
 
 - title: Antifragile
   author: Nassim Nicholas Taleb
-  description: "Some things break under stress, others get stronger. Taleb's framework for telling them apart."
+  description: In this book, Taleb describes what is the difference between fragility, i.e. being vulnerable to external influences and anti-fragility (the opposite). I'm in the process of finishing up this one.
   image: https://m.media-amazon.com/images/I/41HPFOJ+B7L._SY445_SX342_.jpg
   link: "https://www.amazon.de/dp/0141038225?tag=mvlast-21"
 
 - title: The Fall of Yugoslavia
   author: Svetozar
-  description: "A clear-eyed breakdown of how Yugoslavia collapsed — the mechanisms, the politics, the escalation."
+  description: I read this one because I was interested in the mechanics behind the wars in Yugoslavia from the 90s, how it came to it and what were the underlying issues. This book does a good job of decomposing the underlying mechanisms.
   image: https://m.media-amazon.com/images/I/51EQPMQJ4QL._SY445_SX342_.jpg
   link: "https://www.amazon.de/dp/1573921467?tag=mvlast-21"
 
 - title: Sustainable Energy without the Hot Air
   author: David MacKay
-  description: "The late David MacKay does the math on energy. No ideology, just numbers. One of the best on the topic."
+  description: Easily one of the best books to understand energy consumption and how to get rid of fossil fuels. Besides being a master Bayesian, the late great David MacKay provides the data and statistics for energy production and consumption.
   image: https://m.media-amazon.com/images/I/51SfhvGOjYL._SY445_SX342_.jpg
   link: "https://www.amazon.de/dp/0954452933?tag=mvlast-21"
 
 - title: The Black Swan
   author: Nassim Nicholas Taleb
-  description: "On rare, unpredictable events that reshape everything. A bit long-winded but essential Taleb."
+  description: Black swans are events that are unpredictable and have big repercussions on society or the individual, a nice read but also quite lengthy with long descriptions. Definitely a must read if you are a Taleb fan.
   image: https://m.media-amazon.com/images/I/41V5H5XRCPL._SY445_SX342_.jpg
   link: "https://www.amazon.de/dp/081297381X?tag=mvlast-21"
 
 - title: "12 Rules for Life"
   author: Jordan Peterson
-  description: "Not usually a self-help person, but this one has a sciency flavor and helped me through some dark times."
+  description: I don't care if you land in the Peterson side of the court of somewhere else, I'm not a big fan of self-help books, but this one helped me through some dark times. It has a bit of a sciency flavor, which I like.
   image: https://m.media-amazon.com/images/I/41kspFBwVxL._SY445_SX342_.jpg
   link: "https://amzn.to/3wAVMWv"
 
 - title: "Zero to One"
   author: Peter Thiel
-  description: "What makes a startup actually succeed? Short, opinionated, and worth the few hours."
+  description: "A simple one-liner: what does it take for a startup to succeed, what are great founder made of? Relatively easy read."
   image: https://m.media-amazon.com/images/I/41puYDYvYxL._SY445_SX342_.jpg
   link: "https://www.amazon.de/dp/0804139296?tag=mvlast-21"
 
 - title: "The Hard Thing About Hard Things"
   author: "Ben Horowitz"
-  description: "Horowitz on the unglamorous side of being a CEO. Honest about the leadership problems nobody warns you about."
+  description: "Another startup book that I read, Ben Horowitz does a good job describing his journey as a CEO with the leadership hurdles that he needed to tackle."
   image: https://m.media-amazon.com/images/I/51Ifl2MgiKL._SY445_SX342_.jpg
   link: "https://www.amazon.de/dp/0062273205?tag=mvlast-21"
 

@@ -27,7 +27,10 @@
 
 <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="192x192" href="{{ '/favicon-192.png' | relative_url }}">
+<link rel="icon" type="image/png" sizes="512x512" href="{{ '/favicon-512.png' | relative_url }}">
 <link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}">
+<link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
 {% if page.url == '/' %}<link rel="preload" as="image" href="{{ '/images/profile.jpg' | relative_url }}">{% endif %}
 
 <!-- Fonts -->

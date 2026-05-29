@@ -28,6 +28,7 @@
 <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" type="image/x-icon">
 <link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}">
+{% if page.url == '/' %}<link rel="preload" as="image" href="{{ '/images/profile.jpg' | relative_url }}">{% endif %}
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,7 +40,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
 <!-- Site styles (cache-bust with site version) -->
-<link rel="stylesheet" type="text/css" href="{{ '/style.css' | relative_url }}?v=5">
+<link rel="stylesheet" type="text/css" href="{{ '/style.css' | relative_url }}?v=6">
 
 <!-- Code highlighting -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/base16/material.min.css">

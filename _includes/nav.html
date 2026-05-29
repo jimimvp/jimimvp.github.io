@@ -30,8 +30,12 @@
             </ul>
           </li>
         {% else %}
+          {% assign link_path = link[1] | relative_url %}
+          {% assign is_active = false %}
+          {% if link_path == page.url or page.url == link[1] %}{% assign is_active = true %}{% endif %}
+          {% if link[1] contains '#' and page.url == '/' %}{% assign is_active = true %}{% endif %}
           <li class="nav-item">
-            <a class="nav-link" href="{{ link[1] | relative_url }}">{{ link[0] }}</a>
+            <a class="nav-link{% if is_active %} is-active{% endif %}" href="{{ link_path }}">{{ link[0] }}</a>
           </li>
         {% endif %}
       {% endfor %}

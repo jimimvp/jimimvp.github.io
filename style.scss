@@ -229,6 +229,11 @@ span.highlight {
   color: var(--accent);
 }
 
+.navbar-blur .nav-link.is-active {
+  color: var(--accent);
+  background: var(--pill-bg);
+}
+
 .navbar-blur .dropdown-toggle::after {
   display: inline-block;
   margin-left: 0.35em;
@@ -456,11 +461,7 @@ span.highlight {
   transform: translateY(-2px);
 }
 
-.social .ai-google-scholar { color: inherit; }
-.social .fa-medium,
-.social .fa-github,
-.social .ai-cv { color: inherit; }
-.social .fa-twitter { color: inherit; }
+.social i { color: inherit; }
 
 /* ============================================================
    Section heading
@@ -473,6 +474,11 @@ span.highlight {
   padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--border);
   letter-spacing: -0.01em;
+  scroll-margin-top: 4rem;
+}
+
+[id] {
+  scroll-margin-top: 4rem;
 }
 
 /* ============================================================
@@ -511,6 +517,17 @@ span.highlight {
   display: block;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.card__media {
+  background: linear-gradient(90deg, var(--bg) 25%, var(--border) 50%, var(--bg) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease infinite;
 }
 
 .card__body {

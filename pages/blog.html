@@ -57,7 +57,7 @@ permalink: /blog
       {% if post.categories contains 'blog' or post.categories contains 'note' %}
         {% assign is_note = false %}
         {% if post.categories contains 'note' %}{% assign is_note = true %}{% endif %}
-        <li class="blog-entry">
+        <li class="blog-entry{% if is_note %} blog-entry--note{% endif %}">
           <h2 class="blog-entry__title">
             <a href="{{ post.url | relative_url }}">
               {{ post.title }}

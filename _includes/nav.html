@@ -142,5 +142,15 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     }
+
+    // Collapsible sections
+    document.querySelectorAll('[data-collapse-toggle]').forEach(function (heading) {
+      var target = heading.nextElementSibling;
+      if (!target) return;
+      heading.addEventListener('click', function () {
+        heading.classList.toggle('is-collapsed');
+        target.classList.toggle('is-collapsed');
+      });
+    });
   });
 </script>

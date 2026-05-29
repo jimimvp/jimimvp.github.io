@@ -464,6 +464,69 @@ span.highlight {
 .social i { color: inherit; }
 
 /* ============================================================
+   Section divider
+   ============================================================ */
+
+.section-divider {
+  height: 2px;
+  margin: 2.5rem 0;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0.25;
+  border-radius: 1px;
+}
+
+/* ============================================================
+   Stats bar
+   ============================================================ */
+
+.stats-bar {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1.5rem 1rem;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.stats-bar__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  min-width: 5rem;
+}
+
+.stats-bar__number {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.stats-bar__label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 480px) {
+  .stats-bar {
+    gap: 1rem;
+  }
+
+  .stats-bar__number {
+    font-size: 1.4rem;
+  }
+}
+
+/* ============================================================
    Section heading
    ============================================================ */
 
@@ -479,6 +542,37 @@ span.highlight {
 
 [id] {
   scroll-margin-top: 4rem;
+}
+
+/* Collapsible section toggle */
+.section-heading--collapsible {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
+
+.section-heading__chevron {
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+  color: var(--muted);
+}
+
+.section-heading--collapsible.is-collapsed .section-heading__chevron {
+  transform: rotate(-90deg);
+}
+
+.collapsible {
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  max-height: 2000px;
+  opacity: 1;
+}
+
+.collapsible.is-collapsed {
+  max-height: 0;
+  opacity: 0;
 }
 
 /* ============================================================
@@ -528,6 +622,19 @@ span.highlight {
   background: linear-gradient(90deg, var(--bg) 25%, var(--border) 50%, var(--bg) 75%);
   background-size: 200% 100%;
   animation: shimmer 1.5s ease infinite;
+}
+
+.card__placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 4 / 3;
+  color: var(--border);
+}
+
+.card__placeholder svg {
+  width: 40%;
+  height: auto;
 }
 
 .card__body {
@@ -760,12 +867,25 @@ span.highlight {
 }
 
 .blog-entry {
-  padding: 1.25rem 0;
+  padding: 1.25rem;
   border-bottom: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-sm);
+  margin-bottom: 0.5rem;
+  background: var(--bg-elev);
+  transition: border-color 0.15s ease;
+}
+
+.blog-entry--note {
+  border-left-color: #2b9a8f;
 }
 
 .blog-entry:last-child {
-  border-bottom: 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.blog-entry:hover {
+  border-left-color: var(--accent-hover);
 }
 
 .blog-entry__title {

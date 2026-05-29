@@ -1,3 +1,24 @@
+<div class="section-divider"></div>
+
+<div class="stats-bar animate-on-scroll">
+  <div class="stats-bar__item">
+    <span class="stats-bar__number">15</span>
+    <span class="stats-bar__label">Publications</span>
+  </div>
+  <div class="stats-bar__item">
+    <span class="stats-bar__number">7</span>
+    <span class="stats-bar__label">Top Venues</span>
+  </div>
+  <div class="stats-bar__item">
+    <span class="stats-bar__number">1</span>
+    <span class="stats-bar__label">Best Paper Nom.</span>
+  </div>
+  <div class="stats-bar__item">
+    <span class="stats-bar__number">800+</span>
+    <span class="stats-bar__label">Citations</span>
+  </div>
+</div>
+
 <h2 id="projects" class="section-heading animate-on-scroll">Research</h2>
 
 <div class="card-list">
@@ -10,11 +31,15 @@
   year={ {{- post.date | date: "%Y" -}} }
 }{% endcapture %}
       <article class="card animate-on-scroll{% if post.featured %} card--featured{% endif %}">
-        {% if post.image %}
-          <a class="card__media" href="{{ post.url | relative_url }}">
+        <a class="card__media" href="{{ post.url | relative_url }}">
+          {% if post.image %}
             <img src="{{ '/tn' | append: post.image | relative_url }}" alt="" loading="lazy" decoding="async">
-          </a>
-        {% endif %}
+          {% else %}
+            <div class="card__placeholder">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="6" width="32" height="36" rx="2" stroke="currentColor" stroke-width="1.5"/><line x1="14" y1="14" x2="34" y2="14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="14" y1="20" x2="34" y2="20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="14" y1="26" x2="28" y2="26" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+          {% endif %}
+        </a>
         <div class="card__body">
           <h3 class="card__title">{{ post.title }}</h3>
           {% if post.subtitle %}
@@ -41,17 +66,24 @@
   {% endfor %}
 </div>
 
-<h2 id="side-projects" class="section-heading animate-on-scroll">Side Projects</h2>
+<h2 id="side-projects" class="section-heading animate-on-scroll section-heading--collapsible" data-collapse-toggle>
+  Side Projects
+  <svg class="section-heading__chevron" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+</h2>
 
-<div class="card-list">
+<div class="card-list collapsible" id="side-projects-list">
   {% for post in site.posts %}
     {% if post.categories contains 'side-project' %}
       <article class="card animate-on-scroll">
-        {% if post.image %}
-          <a class="card__media" href="{{ post.url | relative_url }}">
+        <a class="card__media" href="{{ post.url | relative_url }}">
+          {% if post.image %}
             <img src="{{ '/tn' | append: post.image | relative_url }}" alt="" loading="lazy" decoding="async">
-          </a>
-        {% endif %}
+          {% else %}
+            <div class="card__placeholder">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="6" width="32" height="36" rx="2" stroke="currentColor" stroke-width="1.5"/><line x1="14" y1="14" x2="34" y2="14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="14" y1="20" x2="34" y2="20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="14" y1="26" x2="28" y2="26" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+          {% endif %}
+        </a>
         <div class="card__body">
           <h3 class="card__title">{{ post.title }}</h3>
           {% if post.subtitle %}

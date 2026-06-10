@@ -26,6 +26,7 @@
 <meta name="twitter:image" content="{{ page_image }}">
 
 <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+{% feed_meta %}
 <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" type="image/x-icon">
 <link rel="icon" type="image/png" sizes="192x192" href="{{ '/favicon-192.png' | relative_url }}">
 <link rel="icon" type="image/png" sizes="512x512" href="{{ '/favicon-512.png' | relative_url }}">

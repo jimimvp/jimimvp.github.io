@@ -81,3 +81,27 @@
   description: "A rigorous and personal look at psychedelic research — part neuroscience, part history, part memoir."
   image: https://covers.openlibrary.org/b/isbn/0735224153-M.jpg
   link: "https://www.amazon.de/dp/0735224153?tag=mvlast-21"
+
+- title: "The Dictator's Handbook"
+  author: "Bruce Bueno de Mesquita, Alastair Smith"
+  description: "Politics explained as a game of keeping the minimal winning coalition happy. Cynical, uncomfortably predictive, and applicable well beyond dictatorships — boardrooms included."
+  image: https://covers.openlibrary.org/b/isbn/1610391845-M.jpg
+  link: "https://www.amazon.de/dp/1610391845?tag=mvlast-21"
+
+- title: "Life"
+  author: "Keith Richards"
+  description: "The Stones guitarist's autobiography. Open G tuning, riffs written in his sleep, and surviving things that should be unsurvivable — told with disarming honesty and humor."
+  image: https://covers.openlibrary.org/b/isbn/9780316034296-M.jpg
+  link: "https://www.amazon.de/dp/0316034296?tag=mvlast-21"
+
+- title: "Einstein: His Life and Universe"
+  author: "Walter Isaacson"
+  description: "Isaacson's portrait of the stubborn patent clerk who rewrote physics. Great on how Einstein's irreverence toward authority was inseparable from his creativity."
+  image: https://covers.openlibrary.org/b/isbn/0743264738-M.jpg
+  link: "https://www.amazon.de/dp/0743264738?tag=mvlast-21"
+
+- title: "Gödel, Escher, Bach: An Eternal Golden Braid"
+  author: "Douglas Hofstadter"
+  description: "The classic on self-reference and strange loops — how meaning and minds can emerge from formal systems. Dense, playful, and unlike any other book; required reading for anyone thinking about intelligence."
+  image: https://covers.openlibrary.org/b/isbn/0465026567-M.jpg
+  link: "https://www.amazon.de/dp/0465026567?tag=mvlast-21"

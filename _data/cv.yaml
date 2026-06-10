@@ -1,51 +1,91 @@
 positions:
-  - period: "2026 — present"
+  - period: "Jan 2026 — present"
     role: Member of Technical Staff
     org: Project Prometheus
     note: ""
 
-  - period: "2024 — 2026"
+  - period: "Mar 2025 — Jan 2026"
     role: Research Scientist
-    org: Meta Superintelligence Labs
-    note: "Post-training for large language models."
+    org: Meta Superintelligence Labs, Zurich
+    note: "Post-training reasoning — led and coordinated efforts around data value and efficient learning in RL and SFT. Led self-improvement and self-play research for agentic models."
 
-  - period: "2024"
-    role: Visiting Researcher
-    org: Meta GenAI, Zurich
-    note: "Efficient large-scale diffusion generative models."
+  - period: "Apr 2025 — present"
+    role: Guest Scientist
+    org: ETH Zurich
+    note: "Student supervision on topics of discovery with generative models and RL."
 
-  - period: "2022 — 2024"
+  - period: "Oct 2024 — Apr 2025"
     role: Postdoctoral Researcher
-    org: ETH AI Center
-    note: "With Andreas Krause, Marco Hutter and Bernhard Schölkopf."
+    org: ETH AI Center, Zurich
+    note: "Discovery with generative models and reinforcement learning. Supervisors: Andreas Krause, Marco Hutter, Bernhard Schölkopf."
 
-  - period: "2022"
+  - period: "May 2024 — Oct 2024"
     role: Research Scientist Intern
-    org: DeepMind
-    note: "Diffusion generative modelling for optimization, hosted by Kimberly Stachenfeld in Peter Battaglia's group, with Arnaud Doucet."
+    org: Meta, Zurich
+    note: "Efficiency and fine-tuning of large-scale text-to-image and text-to-video diffusion models."
 
-  - period: "2021"
-    role: Applied Scientist Intern
-    org: Amazon
-    note: "Variational inference, reinforcement learning and NLP, with Patrick Ernst and Gyuri Szarvas."
+  - period: "Apr 2019 — May 2024"
+    role: Graduate Researcher
+    org: Max Planck Institute for Intelligent Systems, Tübingen
+    note: "Research in machine learning, reinforcement learning and implicit layers."
+
+  - period: "Jul — Dec 2022"
+    role: Research Scientist Intern
+    org: DeepMind, London
+    note: "Score-based (diffusion) generative modeling for inverse design."
+
+  - period: "May — Sep 2021"
+    role: Applied Research Scientist Intern
+    org: Amazon, Berlin
+    note: "Reinforcement learning for task-oriented dialogue systems, amortized variational inference, normalizing flows."
+
+  - period: "Jul — Dec 2018"
+    role: Researcher
+    org: Max Planck Institute for Intelligent Systems, Tübingen
+    note: "Research in hierarchical reinforcement learning."
+
+  - period: "Sep — Oct 2017"
+    role: Research Intern
+    org: Volkswagen AG Data:Lab, Munich
+    note: "Continuous control of mobile robots, path planning and unsupervised object sorting with VAEs and region proposal networks."
 
   - period: "2017"
+    role: Research Assistant
+    org: Forschungszentrum Informatik, Karlsruhe
+    note: "Reinforcement learning for continuous motor control via liquid state machines."
+
+  - period: "Jan — Jul 2017"
     role: Research Fellow
-    org: Blue Brain Project, Geneva
-    note: "Computational neuroscience."
+    org: Blue Brain Project, EPFL, Geneva
+    note: "Reinforcement learning and reservoir computing for motor control with spiking neural networks."
+
+  - period: "Apr — Jul 2016"
+    role: Data Analytics Intern
+    org: IBM Research and Development, Böblingen
+    note: "Data analytics and machine learning using Apache Spark."
+
+  - period: "Nov 2015 — Mar 2016"
+    role: Student Research Assistant
+    org: Fraunhofer IOSB, Karlsruhe
+    note: "Knowledge modeling using Bayesian networks; graphical framework for Bayesian network inference in Java."
+
+  - period: "2015"
+    role: Student Research Assistant
+    org: CVHCI, Karlsruhe Institute of Technology
+    note: "Classifiers for video analysis of emotion, valence and violence."
 
 education:
-  - period: "2018 — 2022"
-    role: "PhD in Computer Science (summa cum laude)"
+  - period: "Nov 2024"
+    role: "PhD in Computer Science (summa cum laude, top 1–5%)"
     org: Max Planck Institute for Intelligent Systems, Tübingen
-    note: "International Max Planck Research School for Intelligent Systems (IMPRS-IS). Supervised by Georg Martius; examined by Georg Martius, Peter Dayan, Mathias Niepert and Matthias Hein."
+    note: "Thesis: Structured, Constrained and Creative Learning. Advisory committee: Georg Martius, Peter Dayan, Michael Muehlebach. Examination committee: Georg Martius, Peter Dayan, Mathias Niepert, Matthias Hein."
 
-  - period: ""
-    role: "MSc in Computer Science (machine learning focus)"
+  - period: "Aug 2017"
+    role: "MSc in Artificial Intelligence"
     org: Karlsruhe Institute of Technology
-    note: ""
+    note: "Fields of study: machine learning, robotics, intelligent systems."
 
-  - period: ""
+  - period: "Jul 2014"
     role: "BSc in Computer Science"
     org: University of Zagreb
     note: ""

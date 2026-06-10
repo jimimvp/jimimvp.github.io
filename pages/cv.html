@@ -1,0 +1,48 @@
+---
+layout: default
+title: CV
+permalink: /cv
+full_bleed: true
+---
+
+<main class="page">
+  <header>
+    <h1>Curriculum Vitae</h1>
+    <p>
+      Research scientist working on post-training, reinforcement learning and generative models.
+      A PDF version is available <a href="https://drive.google.com/file/d/1Z6KF9fbO54QafT1Xv8OdpE19coDouabs/view?usp=sharing" target="_blank" rel="noopener noreferrer">here</a>.
+    </p>
+  </header>
+
+  <h2 class="section-heading">Positions</h2>
+  <ul class="timeline">
+    {% for item in site.data.cv.positions %}
+      <li class="timeline__item">
+        <span class="timeline__period">{{ item.period }}</span>
+        <div class="timeline__body">
+          <span class="timeline__role">{{ item.role }}</span>
+          <span class="timeline__org">{{ item.org }}</span>
+          {% if item.note != "" %}<span class="timeline__note">{{ item.note }}</span>{% endif %}
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <h2 class="section-heading">Education</h2>
+  <ul class="timeline">
+    {% for item in site.data.cv.education %}
+      <li class="timeline__item">
+        <span class="timeline__period">{{ item.period }}</span>
+        <div class="timeline__body">
+          <span class="timeline__role">{{ item.role }}</span>
+          <span class="timeline__org">{{ item.org }}</span>
+          {% if item.note != "" %}<span class="timeline__note">{{ item.note }}</span>{% endif %}
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <h2 class="section-heading">Publications</h2>
+  <p>See the <a href="{{ '/#projects' | relative_url }}">research section</a> on the home page, or my
+    <a href="https://scholar.google.com/citations?user=bmOnRUcAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar profile</a>.</p>
+</main>

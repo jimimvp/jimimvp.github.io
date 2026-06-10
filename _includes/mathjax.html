@@ -1,49 +1,54 @@
-<!-- <script>
-    MathJax = {
-    tex: {
-        tags: 'ams'
-        },     
-      jax: ["input/TeX", "output/HTML-CSS"],
-      tex2jax: {
-        inlineMath: [['$', '$'],  ['\\(', '\\)']],
-        displayMath: [ ['$$', '$$']],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      },
-      messageStyle: "none",
-      "HTML-CSS": { 
-          preferredFont: "TeX", 
-          availableFonts: ["STIX","TeX"], 
-          styles: {".MathJax": {color: "#CCCCCC"}} 
-          }
-        };
-</script>
-
-
-<script id="MathJax-script"  type="text/javascript"  async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> -->
-
-<script async>
+<script>
   window.MathJax = {
-  tex: {
-    loader: {load: ['[tex]/mathtools']},
-    tex: {packages: {'[+]': ['mathtools']}, tags: 'ams'},
-    inlineMath: [['$', '$'], ['\\(', '\\)']],
-    displayMath: [             // start/end delimiter pairs for display math
-      ['$$', '$$'],
-      ['\\[', '\\]']
-    ],
-    processEscapes: false
-  },
-  svg: {
-    fontCache: 'global'
-  }
-};
+    loader: { load: ['[tex]/mathtools'] },
+    tex: {
+      packages: { '[+]': ['mathtools'] },
+      tags: 'ams',
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: false,
+      macros: {
+        ind: '\\perp\\!\\!\\!\\!\\perp',
+        gG: '\\mathcal{G}', gH: '\\mathcal{H}', gD: '\\mathcal{D}',
+        gA: '\\mathcal{A}', gS: '\\mathcal{S}', gX: '\\mathcal{X}',
+        gR: '\\mathcal{R}', gE: '\\mathcal{E}', gP: '\\mathcal{P}',
+        gW: '\\mathcal{W}', gN: '\\mathcal{N}',
+        rx: '\\textnormal{x}', rz: '\\textnormal{z}',
+        sE: '\\mathbb{E}', sP: '\\mathbb{P}', sR: '\\mathbb{R}',
+        sC: '\\mathbb{C}', sI: '\\mathbb{I}',
+        E: '\\mathbb{E}', R: '\\mathbb{R}',
+        rvepsilon: '{\\mathbf{\\epsilon}}', rvtheta: '{\\mathbf{\\theta}}',
+        rva: '{\\mathbf{a}}', rvb: '{\\mathbf{b}}', rvc: '{\\mathbf{c}}',
+        rvd: '{\\mathbf{d}}', rve: '{\\mathbf{e}}', rvf: '{\\mathbf{f}}',
+        rvg: '{\\mathbf{g}}', rvh: '{\\mathbf{h}}', rvu: '{\\mathbf{i}}',
+        rvj: '{\\mathbf{j}}', rvk: '{\\mathbf{k}}', rvl: '{\\mathbf{l}}',
+        rvm: '{\\mathbf{m}}', rvn: '{\\mathbf{n}}', rvo: '{\\mathbf{o}}',
+        rvp: '{\\mathbf{p}}', rvq: '{\\mathbf{q}}',
+        Ls: '\\mathcal{L}',
+        emp: '\\tilde{p}',
+        lr: '\\alpha',
+        reg: '\\lambda',
+        rect: '\\mathrm{rectifier}',
+        softmax: '\\mathrm{softmax}',
+        sigmoid: '\\sigma',
+        softplus: '\\zeta',
+        KL: 'D_{\\mathrm{KL}}',
+        Var: '\\mathrm{Var}',
+        standarderror: '\\mathrm{SE}',
+        Cov: '\\mathrm{Cov}',
+        normlzero: 'L^0', normlone: 'L^1', normltwo: 'L^2',
+        normlp: 'L^p', normmax: 'L^\\infty',
+        parents: 'Pa',
+        disteq: '\\overset{d}{=}'
+      }
+    },
+    svg: { fontCache: 'global' }
+  };
 
-(function () {
-  var script = document.createElement('script');
-  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-  script.async = true;
-  document.head.appendChild(script);
-})();
-
+  (function () {
+    var script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+    script.async = true;
+    document.head.appendChild(script);
+  })();
 </script>

@@ -1,0 +1,51 @@
+positions:
+  - period: "2026 — present"
+    role: Member of Technical Staff
+    org: Project Prometheus
+    note: ""
+
+  - period: "2024 — 2026"
+    role: Research Scientist
+    org: Meta Superintelligence Labs
+    note: "Post-training for large language models."
+
+  - period: "2024"
+    role: Visiting Researcher
+    org: Meta GenAI, Zurich
+    note: "Efficient large-scale diffusion generative models."
+
+  - period: "2022 — 2024"
+    role: Postdoctoral Researcher
+    org: ETH AI Center
+    note: "With Andreas Krause, Marco Hutter and Bernhard Schölkopf."
+
+  - period: "2022"
+    role: Research Scientist Intern
+    org: DeepMind
+    note: "Diffusion generative modelling for optimization, hosted by Kimberly Stachenfeld in Peter Battaglia's group, with Arnaud Doucet."
+
+  - period: "2021"
+    role: Applied Scientist Intern
+    org: Amazon
+    note: "Variational inference, reinforcement learning and NLP, with Patrick Ernst and Gyuri Szarvas."
+
+  - period: "2017"
+    role: Research Fellow
+    org: Blue Brain Project, Geneva
+    note: "Computational neuroscience."
+
+education:
+  - period: "2018 — 2022"
+    role: "PhD in Computer Science (summa cum laude)"
+    org: Max Planck Institute for Intelligent Systems, Tübingen
+    note: "International Max Planck Research School for Intelligent Systems (IMPRS-IS). Supervised by Georg Martius; examined by Georg Martius, Peter Dayan, Mathias Niepert and Matthias Hein."
+
+  - period: ""
+    role: "MSc in Computer Science (machine learning focus)"
+    org: Karlsruhe Institute of Technology
+    note: ""
+
+  - period: ""
+    role: "BSc in Computer Science"
+    org: University of Zagreb
+    note: ""

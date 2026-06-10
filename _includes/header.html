@@ -33,17 +33,15 @@
 <link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
 {% if page.url == '/' %}<link rel="preload" as="image" href="{{ '/images/profile.jpg' | relative_url }}">{% endif %}
 
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Fonts (self-hosted Inter, see style.scss @font-face) -->
+<link rel="preload" as="font" type="font/woff2" href="{{ '/assets/fonts/inter-latin.woff2' | relative_url }}" crossorigin>
 
 <!-- Icon fonts (CSS-only, no JS bundle) -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
 <!-- Site styles (cache-bust with site version) -->
-<link rel="stylesheet" type="text/css" href="{{ '/style.css' | relative_url }}?v=7">
+<link rel="stylesheet" type="text/css" href="{{ '/style.css' | relative_url }}?v=8">
 
 <!-- Code highlighting -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/base16/material.min.css">

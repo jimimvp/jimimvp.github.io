@@ -1,0 +1,75 @@
+---
+layout: default
+title: Search
+permalink: /search
+full_bleed: true
+---
+
+<main class="page">
+  <header>
+    <h1>Search</h1>
+    <p>Search across papers, blog posts and notes.</p>
+  </header>
+
+  <input
+    type="search"
+    class="search-input"
+    id="search-input"
+    placeholder="Type to search, e.g. diffusion, RL, causality..."
+    aria-label="Search the site"
+    autofocus>
+
+  <ul class="search-results" id="search-results" aria-live="polite"></ul>
+</main>
+
+<script>
+  (function () {
+    var input = document.getElementById('search-input');
+    var resultsEl = document.getElementById('search-results');
+    var index = null;
+
+    function load() {
+      if (index) return Promise.resolve(index);
+      return fetch('{{ "/search.json" | relative_url }}')
+        .then(function (r) { return r.json(); })
+        .then(function (data) { index = data; return index; });
+    }
+
+    function render(items, query) {
+      if (!query) {
+        resultsEl.innerHTML = '';
+        return;
+      }
+      if (items.length === 0) {
+        resultsEl.innerHTML = '<li class="search-results__empty">No results for "' +
+          query.replace(/[&<>"]/g, '') + '"</li>';
+        return;
+      }
+      resultsEl.innerHTML = items.map(function (item) {
+        var meta = [item.venue, item.date].filter(Boolean).join(', ');
+        return '<li class="resource-item">' +
+          '<a href="' + item.url + '">' + item.title + '</a>' +
+          (meta ? '<span class="resource-item__desc">' + meta + '</span>' : '') +
+          '</li>';
+      }).join('');
+    }
+
+    var debounce;
+    input.addEventListener('input', function () {
+      clearTimeout(debounce);
+      debounce = setTimeout(function () {
+        var q = input.value.trim().toLowerCase();
+        if (!q) { render([], ''); return; }
+        load().then(function (data) {
+          var terms = q.split(/\s+/);
+          var matches = data.filter(function (item) {
+            var hay = (item.title + ' ' + item.authors + ' ' + item.venue + ' ' +
+              item.categories + ' ' + item.content).toLowerCase();
+            return terms.every(function (t) { return hay.indexOf(t) !== -1; });
+          });
+          render(matches.slice(0, 30), q);
+        });
+      }, 150);
+    });
+  })();
+</script>

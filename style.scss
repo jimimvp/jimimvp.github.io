@@ -59,6 +59,28 @@
 }
 
 /* ============================================================
+   Fonts (self-hosted Inter, variable weight)
+   ============================================================ */
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('{{ "/assets/fonts/inter-latin.woff2" | relative_url }}') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('{{ "/assets/fonts/inter-latin-ext.woff2" | relative_url }}') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* ============================================================
    Base
    ============================================================ */
 
@@ -462,6 +484,56 @@ span.highlight {
 }
 
 .social i { color: inherit; }
+
+/* ============================================================
+   News
+   ============================================================ */
+
+.news {
+  margin: 0 0 1rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.news__heading {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  margin: 0 0 0.75rem;
+}
+
+.news__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.news__item {
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  gap: 1rem;
+  padding: 0.4rem 0;
+  font-size: 0.95rem;
+}
+
+.news__date {
+  color: var(--muted);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .news__item {
+    grid-template-columns: 1fr;
+    gap: 0.1rem;
+    padding: 0.5rem 0;
+  }
+}
 
 /* ============================================================
    Section divider
@@ -1100,6 +1172,97 @@ span.highlight {
 /* Scope MathJax sizing to display equations only */
 mjx-container[display="true"] {
   font-size: 1.15em;
+}
+
+/* ============================================================
+   Search
+   ============================================================ */
+
+.search-input {
+  width: 100%;
+  font: inherit;
+  font-size: 1.05rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-elev);
+  color: var(--text);
+  margin-bottom: 1.5rem;
+  transition: border-color 0.15s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.search-results {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.search-results__empty {
+  color: var(--muted);
+  padding: 1rem 0;
+}
+
+/* ============================================================
+   CV timeline
+   ============================================================ */
+
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+}
+
+.timeline__item {
+  display: grid;
+  grid-template-columns: 8rem 1fr;
+  gap: 1.25rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.timeline__item:last-child {
+  border-bottom: 0;
+}
+
+.timeline__period {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+  padding-top: 0.1rem;
+}
+
+.timeline__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.timeline__role {
+  font-weight: 600;
+}
+
+.timeline__org {
+  color: var(--accent);
+  font-size: 0.95rem;
+}
+
+.timeline__note {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 540px) {
+  .timeline__item {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
 }
 
 /* ============================================================

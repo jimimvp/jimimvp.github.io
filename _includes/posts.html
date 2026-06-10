@@ -5,7 +5,7 @@
 <div class="card-list">
   {% for post in site.posts %}
     {% if post.categories contains 'research' %}
-      {% capture bibtex %}@inproceedings{vlastelica{{ post.date | date: "%Y" }},
+      {% capture bibtex %}@inproceedings{ {%- if post.bibkey -%}{{ post.bibkey }}{%- else -%}vlastelica{{ post.date | date: "%Y" }}{{ post.slug }}{%- endif -%},
   title={ {{- post.title -}} },
   author={ {{- post.authors -}} },
   booktitle={ {{- post.venue -}} },

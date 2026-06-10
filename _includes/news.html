@@ -1,0 +1,13 @@
+{% if site.data.news and site.data.news.size > 0 %}
+<section class="news animate-on-scroll" aria-label="Recent news">
+  <h2 class="news__heading">News</h2>
+  <ul class="news__list">
+    {% for item in site.data.news limit: 5 %}
+      <li class="news__item">
+        <span class="news__date">{{ item.date }}</span>
+        <span class="news__text">{{ item.text }}</span>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}

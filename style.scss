@@ -612,6 +612,11 @@ span.highlight {
   scroll-margin-top: 4rem;
 }
 
+/* First section right after a page header shouldn't have the full gap */
+header + .section-heading {
+  margin-top: 1.5rem;
+}
+
 [id] {
   scroll-margin-top: 4rem;
 }
@@ -1214,13 +1219,13 @@ mjx-container[display="true"] {
 .timeline {
   list-style: none;
   padding: 0;
-  margin: 0 0 2rem;
+  margin: 0 0 2.5rem;
 }
 
 .timeline__item {
   display: grid;
-  grid-template-columns: 8rem 1fr;
-  gap: 1.25rem;
+  grid-template-columns: 10.5rem 1fr;
+  gap: 1.5rem;
   padding: 0.85rem 0;
   border-bottom: 1px solid var(--border);
 }
@@ -1233,8 +1238,7 @@ mjx-container[display="true"] {
   color: var(--muted);
   font-size: 0.9rem;
   font-weight: 500;
-  white-space: nowrap;
-  padding-top: 0.1rem;
+  padding-top: 0.15rem;
 }
 
 .timeline__body {

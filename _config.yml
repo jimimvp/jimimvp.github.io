@@ -55,9 +55,10 @@ footer-links:
 # You can find your shortname on the Settings page of your Disqus account
 disqus:
 
-# Google Analytics 4 measurement ID. (The legacy UA-82494716-7 property
-# stopped collecting when Universal Analytics shut down in 2023.)
-google_analytics: G-9TD4ZM1G10
+# Google Analytics 4 measurement ID for property 364313717.
+# (Legacy UA-82494716-7 stopped collecting when UA shut down in 2023;
+# the 2021 stream G-9TD4ZM1G10 was orphaned.)
+google_analytics: G-MNEG6D1BJ5
 # Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
 # Used for Sitemap.xml and your RSS feed
 

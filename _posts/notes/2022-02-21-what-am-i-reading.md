@@ -2,6 +2,7 @@
 title: What I Am Reading
 categories: note
 layout: post
+math: true
 ---
 
 Here I will continually update the research papers that I have read, comment them, brainstorm some ideas of improvement.

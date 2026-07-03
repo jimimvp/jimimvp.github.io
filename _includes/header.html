@@ -5,7 +5,12 @@
 <title>{{ page.title | default: site.name }}</title>
 
 {% assign page_description = page.description | default: site.description | default: "Marin Vlastelica - member of technical staff at Project Prometheus. Research in reinforcement learning and generative models." %}
-{% assign page_image = page.image | default: site.avatar | default: "images/profile.jpg" | absolute_url %}
+{% comment %} Post front matter stores images relative to /images (e.g. "/wasabi.png") {% endcomment %}
+{% if page.image %}
+  {% assign page_image = page.image | prepend: '/images' | absolute_url %}
+{% else %}
+  {% assign page_image = site.avatar | default: "images/profile.jpg" | absolute_url %}
+{% endif %}
 
 <meta name="description" content="{{ page_description }}">
 <meta name="author" content="{{ site.name }}">
@@ -19,8 +24,9 @@
 <meta property="og:image" content="{{ page_image }}">
 <meta property="og:site_name" content="{{ site.name }}">
 
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
+<!-- Twitter Card: wide card only when the page has a real (landscape) image;
+     the square profile-photo fallback renders better as a small summary card. -->
+<meta name="twitter:card" content="{% if page.image %}summary_large_image{% else %}summary{% endif %}">
 <meta name="twitter:title" content="{{ page.title | default: site.name }}">
 <meta name="twitter:description" content="{{ page_description }}">
 <meta name="twitter:image" content="{{ page_image }}">
@@ -37,22 +43,8 @@
 <!-- Fonts (self-hosted Inter, see style.scss @font-face) -->
 <link rel="preload" as="font" type="font/woff2" href="{{ '/assets/fonts/inter-latin.woff2' | relative_url }}" crossorigin>
 
-<!-- Icon fonts (CSS-only, no JS bundle) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-
 <!-- Site styles (cache-bust with site version) -->
-<link rel="stylesheet" type="text/css" href="{{ '/style.css' | relative_url }}?v=8">
+<link rel="stylesheet" type="text/css" href="{{ '/style.css' | relative_url }}?v=9">
 
-<!-- Code highlighting -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/base16/material.min.css">
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.7.0/highlightjs-line-numbers.min.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    if (window.hljs) {
-      hljs.highlightAll();
-      if (hljs.initLineNumbersOnLoad) hljs.initLineNumbersOnLoad();
-    }
-  });
-</script>
+<!-- Code highlighting is done at build time by Rouge (see style.scss) -->
+

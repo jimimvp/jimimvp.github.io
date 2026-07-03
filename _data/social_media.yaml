@@ -1,27 +1,31 @@
 - name: Google Scholar
   link: https://scholar.google.com/citations?user=bmOnRUcAAAAJ&hl=en
-  favicon: ai ai-google-scholar ai-2x
+  icon: scholar
 
 - name: Curriculum Vitae
   link: /cv
-  favicon: ai ai-cv fa-2x
+  icon: cv
 
 - name: X (Twitter)
   link: https://x.com/vlastelicap
-  favicon: fab fa-x-twitter fa-2x
+  icon: x-twitter
 
 - name: LinkedIn
   link: https://www.linkedin.com/in/mvlastelica/
-  favicon: fab fa-linkedin fa-2x
+  icon: linkedin
 
 - name: Medium
   link: https://medium.com/@marinvp
-  favicon: fab fa-medium fa-2x
+  icon: medium
 
 - name: Instagram
   link: https://www.instagram.com/marin.vlast
-  favicon: fab fa-instagram fa-2x
+  icon: instagram
 
 - name: GitHub
   link: https://github.com/jimimvp
-  favicon: fab fa-github fa-2x
+  icon: github
+
+- name: RSS feed
+  link: /feed.xml
+  icon: rss

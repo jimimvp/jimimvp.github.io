@@ -12,7 +12,7 @@ full_bleed: true
   <p>Resources on sequential decision making — reinforcement learning, model-predictive control, and related topics.</p>
 </header>
 
-<h2><i class="fas fa-chalkboard-teacher" aria-hidden="true"></i> Lectures</h2>
+<h2>{% include icon.html name="lecture" %} Lectures</h2>
 
 <ul class="resource-list">
 {% for lect in site.data.lectures %}
@@ -24,7 +24,7 @@ full_bleed: true
 {% endfor %}
 </ul>
 
-<h2><i class="fas fa-book" aria-hidden="true"></i> Free Books</h2>
+<h2>{% include icon.html name="book" %} Free Books</h2>
 
 <ul class="resource-list">
 {% for book in site.data.books %}

@@ -2,16 +2,15 @@
 layout: default
 full_bleed: true
 permalink: /blog
+math: true # excerpts below can contain LaTeX
 ---
-
-<!-- LaTeX macros are defined centrally in _includes/mathjax.html -->
 
 <main class="page">
   <header class="blog-header">
     <h1 class="blog-header__title">Writing</h1>
     <p class="blog-header__legend">
-      <span><i class="fas fa-blog" aria-hidden="true"></i> Blog post</span>
-      <span><i class="fas fa-sticky-note" aria-hidden="true"></i> Note</span>
+      <span>{% include icon.html name="pen" %} Blog post</span>
+      <span>{% include icon.html name="note" %} Note</span>
     </p>
   </header>
 
@@ -25,9 +24,9 @@ permalink: /blog
             <a href="{{ post.url | relative_url }}">
               {{ post.title }}
               {% if is_note %}
-                <i class="fas fa-sticky-note icon" aria-label="Note"></i>
+                {% include icon.html name="note" class="icon" %}
               {% else %}
-                <i class="fas fa-blog icon" aria-label="Blog post"></i>
+                {% include icon.html name="pen" class="icon" %}
               {% endif %}
             </a>
           </h2>

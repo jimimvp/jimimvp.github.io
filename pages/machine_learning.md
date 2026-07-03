@@ -12,7 +12,7 @@ full_bleed: true
   <p>Books, websites and reference material for machine learning practitioners.</p>
 </header>
 
-<h2><i class="fas fa-book" aria-hidden="true"></i> Free Books</h2>
+<h2>{% include icon.html name="book" %} Free Books</h2>
 
 <ul class="resource-list">
 {% for book in site.data.books %}
@@ -25,7 +25,7 @@ full_bleed: true
 {% endfor %}
 </ul>
 
-<h2><i class="fas fa-globe" aria-hidden="true"></i> Websites</h2>
+<h2>{% include icon.html name="globe" %} Websites</h2>
 
 <ul class="resource-list">
 {% for site_item in site.data.websites %}

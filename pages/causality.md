@@ -12,7 +12,7 @@ full_bleed: true
   <p>A curated collection of resources on causal inference and causal discovery that I've found useful — talks, lectures, books, websites and papers.</p>
 </header>
 
-<h2><i class="fas fa-globe" aria-hidden="true"></i> Websites</h2>
+<h2>{% include icon.html name="globe" %} Websites</h2>
 
 <ul class="resource-list">
 {% for site_item in site.data.websites %}
@@ -25,7 +25,7 @@ full_bleed: true
 {% endfor %}
 </ul>
 
-<h2><i class="fas fa-video" aria-hidden="true"></i> Talks</h2>
+<h2>{% include icon.html name="video" %} Talks</h2>
 
 <ul class="resource-list">
 {% for talk in site.data.talks %}
@@ -37,7 +37,7 @@ full_bleed: true
 {% endfor %}
 </ul>
 
-<h2><i class="fas fa-chalkboard-teacher" aria-hidden="true"></i> Lectures</h2>
+<h2>{% include icon.html name="lecture" %} Lectures</h2>
 
 <ul class="resource-list">
 {% for lect in site.data.lectures %}
@@ -49,7 +49,7 @@ full_bleed: true
 {% endfor %}
 </ul>
 
-<h2><i class="fas fa-book" aria-hidden="true"></i> Free Books</h2>
+<h2>{% include icon.html name="book" %} Free Books</h2>
 
 <ul class="resource-list">
 {% for book in site.data.books %}

@@ -41,7 +41,7 @@
       {% endfor %}
       <li class="nav-item">
         <a class="nav-link{% if page.url == '/search' %} is-active{% endif %}" href="{{ '/search' | relative_url }}" aria-label="Search">
-          <i class="fas fa-magnifying-glass" aria-hidden="true"></i>
+          {% include icon.html name="search" %}
         </a>
       </li>
     </ul>

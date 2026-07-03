@@ -24,6 +24,12 @@
   --code-bg: #f4f4f6;
   --pill-bg: rgba(43, 108, 176, 0.08);
   --pill-border: rgba(43, 108, 176, 0.25);
+  --syn-comment: #6a737d;
+  --syn-keyword: #d73a49;
+  --syn-string: #032f62;
+  --syn-number: #005cc5;
+  --syn-function: #6f42c1;
+  --syn-class: #22863a;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -40,6 +46,12 @@
     --code-bg: #1e2024;
     --pill-bg: rgba(106, 168, 255, 0.1);
     --pill-border: rgba(106, 168, 255, 0.25);
+    --syn-comment: #8b949e;
+    --syn-keyword: #ff7b72;
+    --syn-string: #a5d6ff;
+    --syn-number: #79c0ff;
+    --syn-function: #d2a8ff;
+    --syn-class: #7ee787;
   }
 }
 
@@ -56,6 +68,12 @@
   --code-bg: #1e2024;
   --pill-bg: rgba(106, 168, 255, 0.1);
   --pill-border: rgba(106, 168, 255, 0.25);
+  --syn-comment: #8b949e;
+  --syn-keyword: #ff7b72;
+  --syn-string: #a5d6ff;
+  --syn-number: #79c0ff;
+  --syn-function: #d2a8ff;
+  --syn-class: #7ee787;
 }
 
 /* ============================================================
@@ -483,7 +501,13 @@ span.highlight {
   transform: translateY(-2px);
 }
 
-.social i { color: inherit; }
+/* Inline SVG icons (see _includes/icon.html): sized like icon-font glyphs */
+.icon-svg {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+  flex-shrink: 0;
+}
 
 /* ============================================================
    News
@@ -1019,7 +1043,7 @@ header + .section-heading {
   justify-content: center;
 }
 
-.blog-header__legend i {
+.blog-header__legend .icon-svg {
   margin-right: 0.35rem;
 }
 
@@ -1389,32 +1413,37 @@ mjx-container[display="true"] {
 }
 
 /* ============================================================
-   Highlight.js code block tweaks
+   Syntax highlighting (Rouge, build-time)
    ============================================================ */
 
-table.hljs-ln {
-  width: auto;
-  border-width: 0;
+.highlight .c, .highlight .c1, .highlight .cm, .highlight .cs, .highlight .cp {
+  color: var(--syn-comment);
+  font-style: italic;
 }
 
-table.hljs-ln td {
-  border-width: 0;
+.highlight .k, .highlight .kd, .highlight .kn, .highlight .kp,
+.highlight .kr, .highlight .kt, .highlight .ow {
+  color: var(--syn-keyword);
 }
 
-.hljs-ln-numbers {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  text-align: center;
-  color: var(--muted);
-  border-right: 1px solid var(--border) !important;
-  vertical-align: top;
-  padding-right: 5px !important;
+.highlight .s, .highlight .s1, .highlight .s2, .highlight .sb, .highlight .sc,
+.highlight .sd, .highlight .se, .highlight .sh, .highlight .si, .highlight .sx,
+.highlight .sr, .highlight .ss {
+  color: var(--syn-string);
 }
 
-.hljs-ln-code {
-  padding-left: 10px !important;
+.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi,
+.highlight .mo, .highlight .il,
+.highlight .nb, .highlight .bp, .highlight .no, .highlight .ni, .highlight .ne {
+  color: var(--syn-number);
+}
+
+.highlight .nf, .highlight .fm, .highlight .nd {
+  color: var(--syn-function);
+}
+
+.highlight .nc, .highlight .nn, .highlight .nt {
+  color: var(--syn-class);
 }
 
 /* ============================================================

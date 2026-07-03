@@ -8,7 +8,7 @@
       {% for sm in site.data.social_media %}
         <li>
           <a href="{{ sm.link }}" aria-label="{{ sm.name | default: 'External profile' }}" target="_blank" rel="noopener noreferrer">
-            <i class="{{ sm.favicon }}" aria-hidden="true"></i>
+            {% include icon.html name=sm.icon %}
           </a>
         </li>
       {% endfor %}

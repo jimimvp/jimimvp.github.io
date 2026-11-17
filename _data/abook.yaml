@@ -40,12 +40,6 @@
   image: https://covers.openlibrary.org/b/isbn/081297381X-M.jpg
   link: "https://www.amazon.de/dp/081297381X?tag=mvlast-21"
 
-- title: "12 Rules for Life"
-  author: Jordan Peterson
-  description: I don't care if you land in the Peterson side of the court of somewhere else, I'm not a big fan of self-help books, but this one helped me through some dark times. It has a bit of a sciency flavor, which I like.
-  image: https://covers.openlibrary.org/b/isbn/0345816021-M.jpg
-  link: "https://amzn.to/3wAVMWv"
-
 - title: "Zero to One"
   author: Peter Thiel
   description: "A simple one-liner: what does it take for a startup to succeed, what are great founder made of? Relatively easy read."

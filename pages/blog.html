@@ -8,10 +8,11 @@ math: true # excerpts below can contain LaTeX
 <main class="page">
   <header class="blog-header">
     <h1 class="blog-header__title">Writing</h1>
-    <p class="blog-header__legend">
-      <span>{% include icon.html name="pen" %} Blog post</span>
-      <span>{% include icon.html name="note" %} Note</span>
-    </p>
+    <div class="filter-tabs" role="tablist" aria-label="Filter writing by type">
+      <button type="button" class="filter-tab is-active" role="tab" aria-selected="true" data-blog-filter="all">All</button>
+      <button type="button" class="filter-tab" role="tab" aria-selected="false" data-blog-filter="blog">{% include icon.html name="pen" %} Blog posts</button>
+      <button type="button" class="filter-tab" role="tab" aria-selected="false" data-blog-filter="note">{% include icon.html name="note" %} Notes</button>
+    </div>
   </header>
 
   <ul class="blog-list">
@@ -19,7 +20,7 @@ math: true # excerpts below can contain LaTeX
       {% if post.categories contains 'blog' or post.categories contains 'note' %}
         {% assign is_note = false %}
         {% if post.categories contains 'note' %}{% assign is_note = true %}{% endif %}
-        <li class="blog-entry{% if is_note %} blog-entry--note{% endif %}">
+        <li class="blog-entry{% if is_note %} blog-entry--note{% endif %}" data-post-type="{% if is_note %}note{% else %}blog{% endif %}">
           <h2 class="blog-entry__title">
             <a href="{{ post.url | relative_url }}">
               {{ post.title }}

@@ -4,11 +4,24 @@ full_bleed: true
 ---
 <!-- LaTeX macros are defined centrally in _includes/mathjax.html -->
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ page.title | jsonify }},
+  "datePublished": "{{ page.date | date: '%Y-%m-%d' }}",
+  "author": { "@type": "Person", "name": {{ site.name | jsonify }} }
+}
+</script>
+
 <article class="page page--post">
   <header>
     <h1>{{ page.title }}</h1>
     {% if page.date %}
-      <p class="blog-entry__date">{{ page.date | date: "%d %B %Y" }}</p>
+      {% assign words = content | number_of_words %}
+      {% assign mins = words | divided_by: 200 %}
+      {% if mins < 1 %}{% assign mins = 1 %}{% endif %}
+      <p class="blog-entry__date">{{ page.date | date: "%d %B %Y" }} &middot; {{ mins }} min read</p>
     {% endif %}
   </header>
 

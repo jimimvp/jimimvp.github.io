@@ -4,9 +4,6 @@
   <script>
     (function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)})();
   </script>
-  {% if site.google_analytics and jekyll.environment == 'production' %}
-  {% include analytics.html %}
-  {% endif %}
   {% include header.html %}
   {% if page.math or page.layout == 'math_post' %}
   {% include mathjax.html %}
@@ -25,6 +22,10 @@
   {% endif %}
 
   {% include footer.html %}
+  <script src="{{ '/assets/site.js' | relative_url }}?v=10" defer></script>
+  {% if site.google_analytics and jekyll.environment == 'production' %}
+  {% include analytics.html %}
+  {% endif %}
 </body>
 
 </html>

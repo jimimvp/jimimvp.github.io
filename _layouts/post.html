@@ -3,14 +3,54 @@ layout: default
 full_bleed: true
 ---
 
+{% if page.categories contains 'research' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": {{ page.title | jsonify }},
+  "datePublished": "{{ page.date | date: '%Y-%m-%d' }}",
+  {% if page.venue %}"publisher": { "@type": "Organization", "name": {{ page.venue | jsonify }} },{% endif %}
+  {% if page.paper %}"sameAs": {{ page.paper | jsonify }},{% endif %}
+  "author": {{ page.authors | default: site.name | jsonify }},
+  "description": {{ page.subtitle | default: page.excerpt | strip_html | strip_newlines | jsonify }}
+}
+</script>
+{% else %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ page.title | jsonify }},
+  "datePublished": "{{ page.date | date: '%Y-%m-%d' }}",
+  "author": { "@type": "Person", "name": {{ site.name | jsonify }} }
+}
+</script>
+{% endif %}
+
 <article class="page page--post">
   <header>
     <h1>{{ page.title }}</h1>
-    {% if page.date %}
+    {% if page.subtitle %}<p class="card__subtitle">{{ page.subtitle }}</p>{% endif %}
+    {% if page.authors and page.categories contains 'research' %}
+      <p class="card__meta">{{ page.authors }}<br>{% if page.venue %}<em>{{ page.venue }}</em>, {% endif %}{{ page.date | date: "%Y" }}</p>
+    {% elsif page.date %}
       {% assign words = content | number_of_words %}
       {% assign mins = words | divided_by: 200 %}
       {% if mins < 1 %}{% assign mins = 1 %}{% endif %}
       <p class="blog-entry__date">{{ page.date | date: "%d %B %Y" }} &middot; {{ mins }} min read</p>
+    {% endif %}
+    {% if page.paper or page.arxiv or page.code or page.video or page.website or page.article %}
+      <ul class="card__links">
+        {% if page.paper %}<li><a href="{{ page.paper }}">paper</a></li>{% endif %}
+        {% if page.website and page.website != "" %}<li><a href="{{ page.website }}">project page</a></li>{% endif %}
+        {% if page.article %}<li><a href="{{ page.article }}">article</a></li>{% endif %}
+        {% if page.arxiv %}<li><a href="{{ page.arxiv }}">arxiv</a></li>{% endif %}
+        {% if page.video %}<li><a href="{{ page.video }}">video</a></li>{% endif %}
+        {% if page.code %}<li><a href="{{ page.code }}">code</a></li>{% endif %}
+        {% if page.poster %}<li><a href="{{ page.poster }}">poster</a></li>{% endif %}
+        {% if page.slides %}<li><a href="{{ page.slides }}">slides</a></li>{% endif %}
+      </ul>
     {% endif %}
   </header>
 

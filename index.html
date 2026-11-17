@@ -13,7 +13,7 @@ full_bleed: true
   "jobTitle": "Member of Technical Staff",
   "worksFor": {
     "@type": "Organization",
-    "name": "Project Prometheus"
+    "name": "Prometheus"
   },
   "alumniOf": [
     { "@type": "Organization", "name": "Max Planck Institute for Intelligent Systems" },
@@ -33,15 +33,21 @@ full_bleed: true
 <main class="page page--wide home">
   <section class="hero">
     <div class="hero__intro">
-      <img
-        class="hero__photo"
-        src="{{ '/images/profile.jpg' | relative_url }}"
-        alt="Portrait of {{ site.name }}"
-        width="280"
-        height="280"
-        loading="eager"
-        decoding="async">
-      <h1 class="hero__name">{{ site.name }}</h1>
+      <picture class="hero__photo-wrap">
+        <source srcset="{{ '/images/profile.webp' | relative_url }}" type="image/webp">
+        <img
+          class="hero__photo"
+          src="{{ '/images/profile.jpg' | relative_url }}"
+          alt="Portrait of {{ site.name }}"
+          width="176"
+          height="176"
+          loading="eager"
+          decoding="async">
+      </picture>
+      <div class="hero__header">
+        <h1 class="hero__name">{{ site.name }}</h1>
+        <p class="hero__tagline">Reinforcement Learning &middot; Generative Models &middot; Self-Improving Intelligence</p>
+      </div>
       {% include summary.html %}
     </div>
   </section>

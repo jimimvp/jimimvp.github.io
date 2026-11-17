@@ -4,95 +4,59 @@ categories: note
 layout: post
 ---
 
-My notes on causal model learning and modular computation line of work which connects to learning independent mechanisms. (very roughly written, just capturing the gist of a couple of papers with excerpts).
-
+Rough reading notes on causal model learning and modular computation, connecting independent mechanisms to deep learning architectures.
 
 ## Neural Production Systems
 
-GNNs are not suited to extract objects from images, for two main reasons:
-* they do not predispose interactions to be sparse, as it is mostly the case
-* they do not factorize knowledge about the entities
+GNNs are not always well-suited to extract objects from images, for two main reasons:
+* They do not predispose interactions to be sparse, as is mostly the case in physical scenes.
+* They do not factorize knowledge about entities.
 
-Inspiration in cognitive science, production systems.
-Expressing propositional knowledge is not the strength of current neural networks systems.
-Merge propositional logic and deep learning.
+Drawing inspiration from cognitive science, production systems offer a way to merge propositional logic and deep learning — expressing propositional knowledge is not a natural strength of standard neural networks.
 
-The paper builds upon the classical idea of **production systems** that operate in a condition-action way by updating the `working memory` or performing a certain action on the outside world.
-MLP and attention mechanism to determine rule-entity binding.
+The paper builds upon classical **production systems** that operate in a condition-action way by updating working memory or performing an action on the outside world, using MLPs and attention mechanisms to determine rule-entity binding.
 
-Production system consits of a set of entities and set of rules.
-Production rules are `modular`, each production rule represents a unit of knowledge.  
-Production rules are `sparse`, i.e. dependencies among entities are sparse.
-
-Use straight-through Gumbel-softmax for rule and slot selection.
-
-The topology of the graph induced in NPS is dynamic, while the topology in GNNs is fixed.
-
-Use Ka physics environment with boxes?
-
+* A production system consists of a set of entities and a set of rules.
+* Production rules are **modular** — each rule represents a unit of knowledge.
+* Production rules are **sparse**, i.e., dependencies among entities are sparse.
+* Uses straight-through Gumbel-softmax for rule and slot selection.
+* Unlike GNNs where the graph topology is fixed, the topology induced in NPS is dynamic.
 
 ## VIM: Variational Independent Modules for Video Prediction
 
-Learns latent representations of objects and discovers causal mechanisms between these objects (in representations space).
-Latent states and transition functions of the latent state have entity-centric inductive bias. 
-The transition functions (called modules) are independently parametrized and shared across entities.
-The model outputs a set of categorical selection variables to see which mechanisms are applied.
-Modules are sampled according to their attention importance weights.
-
-A module can only consider a handful of slots as its input argument.
-In this work they consider only unary modules, n-ary they leave for future work. 
-
-Sampling of mechanism to apply via Gumbel-softmax.
+Learns latent representations of objects and discovers causal mechanisms between these objects in representation space.
+* Latent states and transition functions of the latent state have an entity-centric inductive bias.
+* The transition functions (called modules) are independently parametrized and shared across entities.
+* The model outputs a set of categorical selection variables to determine which mechanisms are applied, sampling modules according to their attention importance weights via Gumbel-softmax.
+* A module can only consider a handful of slots as its input argument (in this work they consider only unary modules, leaving $n$-ary modules for future work).
 
 ## Feature Attending Recurrent Modules for Generalization in Reinforcement Learning
 
-Cognitive scientists theorize that humans generalize broadly with “schemas” they discover for regularly occuring structures.
+Cognitive scientists theorize that humans generalize broadly using "schemas" they discover for regularly occurring structures — composable representations over portions of our observations.
 
-schemas are composable representations over portions of our observations.
-
-In this work, we hypothesize that we can develop a single deep RL architecture that can exhibit multiple types of generalization if it can
-learn schema-like representations for regularly occurring structures within its experience.
-
-FARM - architecutre to discover task-relevant schemas.
-
-Parallel to word embeddings - better representation for words since it can be used in various in various ways (vector addition) in comparison to standard words.
-
-To have the modules coordinate what they attend to, they share information using transformer-style attention (Vaswani et al., 2017).
-
-One of the claims of the paper is that spatial attention can be detrimental to reinforcement learning.
-
-FARM attends to an observation with feature attention as opposed to spatial attention. 
-
-Agent takes in partial observation and task description. 
-
+This work hypothesizes that a single deep RL architecture can exhibit multiple types of generalization if it learns schema-like representations for regularly occurring structures within its experience:
+* **FARM** is an architecture designed to discover task-relevant schemas.
+* Analogous to word embeddings — a distributed representation that can be composed in various ways.
+* To have the modules coordinate what they attend to, they share information using transformer-style attention (Vaswani et al., 2017).
+* One of the claims of the paper is that spatial attention can be detrimental to reinforcement learning; FARM attends to an observation with **feature attention** rather than spatial attention.
+* The agent takes in a partial observation and task description.
 
 ## Object Files and Schemata: Factorizing Declarative and Procedural Knowledge in Dynamical Systems
 
-Use Gumbel-based hard selection of appropriate schemata.
-
+Uses Gumbel-based hard selection of appropriate schemata to factorize declarative (object state) and procedural (dynamics) knowledge.
 
 ## Recurrent Independent Mechanisms
 
-"complex generative model, temporal or not, can be thought of as the composition of
-independent mechanisms or “causal” modules" - basically we are thinking of purely Structural Equation Models that are modular here.
+> A complex generative model, temporal or not, can be thought of as the composition of independent mechanisms or "causal" modules.
 
-"ne may hypothesize
-that if a brain is able to solve multiple problems beyond a single i.i.d. (independent and identically
-distributed) task, they may exploit the existence of this kind of structure by learning independent
-mechanisms that can flexibly be reused, composed and re-purposed" - trying to write a translation of this statement here, since mechanisms are not affected by distribution shifts which are realized by interventions, they are reusable across different distributions.
+This corresponds directly to modular Structural Equation Models.
 
+> One may hypothesize that if a brain is able to solve multiple problems beyond a single i.i.d. task, it may exploit the existence of this kind of structure by learning independent mechanisms that can flexibly be reused, composed and re-purposed.
 
-"The central question motivating our work is how a gradient-based deep learning approach can discover a representation of high-level variables which favour forming independent but sparsely interacting recurrent mechanisms in order to benefit from the modularity and independent mechanisms assumption." - `core motivation of the work`
+In other words, since mechanisms are invariant under distribution shifts realized by interventions, they remain reusable across different distributions.
 
-"The central question motivating
-our work is how a gradient-based deep learning approach can learn a representation of high level
-variables which favour learning independent but sparsely interacting recurrent mechanisms in order
-to benefit from such modularity assumption."
+> The central question motivating our work is how a gradient-based deep learning approach can learn a representation of high-level variables which favour learning independent but sparsely interacting recurrent mechanisms in order to benefit from such modularity assumption.
 
-Each RIM (Recurrent Independent Mechanism) should be activated and updated when the input is relevant to it.
-
-Attention mechanism selects and only activates subsets of independent mechanisms.
-
-RIMs can be used as a drop-in replacement for a GRU/LSTM layer.
-
-
+* Each RIM (Recurrent Independent Mechanism) is only activated and updated when the input is relevant to it.
+* An attention mechanism selects and activates subsets of independent mechanisms.
+* RIMs can be used as a drop-in replacement for a GRU or LSTM layer.

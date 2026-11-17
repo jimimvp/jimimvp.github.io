@@ -4,8 +4,7 @@
 
 <title>{{ page.title | default: site.name }}</title>
 
-{% assign raw_description = page.description | default: page.subtitle | default: page.excerpt | default: site.description | default: "Marin Vlastelica - member of technical staff at Prometheus. Research in reinforcement learning and generative models." %}
-{% assign page_description = raw_description | strip_html | strip_newlines | truncate: 200 %}
+{% assign page_description = page.description | default: site.description | default: "Marin Vlastelica - member of technical staff at Project Prometheus. Research in reinforcement learning and generative models." %}
 {% comment %} Post front matter stores images relative to /images (e.g. "/wasabi.png") {% endcomment %}
 {% if page.image %}
   {% assign page_image = page.image | prepend: '/images' | absolute_url %}
@@ -13,16 +12,14 @@
   {% assign page_image = site.avatar | default: "images/profile.jpg" | absolute_url %}
 {% endif %}
 
-<meta name="description" content="{{ page_description | escape }}">
+<meta name="description" content="{{ page_description }}">
 <meta name="author" content="{{ site.name }}">
 <meta name="referrer" content="no-referrer">
-<meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#111214" media="(prefers-color-scheme: dark)">
 
 <!-- Open Graph -->
-<meta property="og:type" content="{% if page.layout == 'post' or page.layout == 'math_post' %}article{% else %}website{% endif %}">
-<meta property="og:title" content="{{ page.title | default: site.name | escape }}">
-<meta property="og:description" content="{{ page_description | escape }}">
+<meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+<meta property="og:title" content="{{ page.title | default: site.name }}">
+<meta property="og:description" content="{{ page_description }}">
 <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 <meta property="og:image" content="{{ page_image }}">
 <meta property="og:site_name" content="{{ site.name }}">
@@ -30,8 +27,8 @@
 <!-- Twitter Card: wide card only when the page has a real (landscape) image;
      the square profile-photo fallback renders better as a small summary card. -->
 <meta name="twitter:card" content="{% if page.image %}summary_large_image{% else %}summary{% endif %}">
-<meta name="twitter:title" content="{{ page.title | default: site.name | escape }}">
-<meta name="twitter:description" content="{{ page_description | escape }}">
+<meta name="twitter:title" content="{{ page.title | default: site.name }}">
+<meta name="twitter:description" content="{{ page_description }}">
 <meta name="twitter:image" content="{{ page_image }}">
 
 <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
@@ -41,13 +38,13 @@
 <link rel="icon" type="image/png" sizes="512x512" href="{{ '/favicon-512.png' | relative_url }}">
 <link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}">
 <link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
-{% if page.url == '/' %}<link rel="preload" as="image" href="{{ '/images/profile.webp' | relative_url }}" type="image/webp">{% endif %}
+{% if page.url == '/' %}<link rel="preload" as="image" href="{{ '/images/profile.jpg' | relative_url }}">{% endif %}
 
 <!-- Fonts (self-hosted Inter, see style.scss @font-face) -->
 <link rel="preload" as="font" type="font/woff2" href="{{ '/assets/fonts/inter-latin.woff2' | relative_url }}" crossorigin>
 
 <!-- Site styles (cache-bust with site version) -->
-<link rel="stylesheet" type="text/css" href="{{ '/style.css' | relative_url }}?v=10">
+<link rel="stylesheet" type="text/css" href="{{ '/style.css' | relative_url }}?v=9">
 
 <!-- Code highlighting is done at build time by Rouge (see style.scss) -->
 

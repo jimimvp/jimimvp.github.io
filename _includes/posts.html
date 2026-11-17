@@ -1,58 +1,6 @@
 <div class="section-divider"></div>
 
-<h2 id="selected" class="section-heading animate-on-scroll">Selected Works</h2>
-
-<div class="card-list card-list--featured">
-  {% for post in site.posts %}
-    {% if post.categories contains 'research' and post.featured %}
-      {% capture bibtex %}@inproceedings{ {%- if post.bibkey -%}{{ post.bibkey }}{%- else -%}vlastelica{{ post.date | date: "%Y" }}{{ post.slug }}{%- endif -%},
-  title={ {{- post.title -}} },
-  author={ {{- post.authors -}} },
-  booktitle={ {{- post.venue -}} },
-  year={ {{- post.date | date: "%Y" -}} }
-}{% endcapture %}
-      {% assign webp_img = post.image | replace: '.png', '.webp' | replace: '.jpg', '.webp' %}
-      <article class="card card--featured animate-on-scroll">
-        <a class="card__media" href="{{ post.url | relative_url }}">
-          {% if post.image %}
-            <picture>
-              <source srcset="{{ '/tn' | append: webp_img | relative_url }}" type="image/webp">
-              <img src="{{ '/tn' | append: post.image | relative_url }}" alt="{{ post.title | escape }}" loading="lazy" decoding="async">
-            </picture>
-          {% else %}
-            <div class="card__placeholder">
-              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="6" width="32" height="36" rx="2" stroke="currentColor" stroke-width="1.5"/><line x1="14" y1="14" x2="34" y2="14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="14" y1="20" x2="34" y2="20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="14" y1="26" x2="28" y2="26" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            </div>
-          {% endif %}
-        </a>
-        <div class="card__body">
-          <h3 class="card__title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-          {% if post.subtitle %}
-            <p class="card__subtitle">{{ post.subtitle }}</p>
-          {% endif %}
-          <p class="card__meta">
-            {{ post.authors }}<br>
-            <em>{{ post.venue }}</em>, {{ post.date | date: "%Y" }}
-          </p>
-          <ul class="card__links">
-            {% if post.paper %}<li><a href="{{ post.paper }}">paper</a></li>{% endif %}
-            {% if post.website and post.website != "" %}<li><a href="{{ post.website }}">website</a></li>{% endif %}
-            {% if post.article %}<li><a href="{{ post.article }}">article</a></li>{% endif %}
-            {% if post.arxiv %}<li><a href="{{ post.arxiv }}">arxiv</a></li>{% endif %}
-            {% if post.video %}<li><a href="{{ post.video }}">video</a></li>{% endif %}
-            {% if post.code %}<li><a href="{{ post.code }}">code</a></li>{% endif %}
-            {% if post.poster %}<li><a href="{{ post.poster }}">poster</a></li>{% endif %}
-            {% if post.slides %}<li><a href="{{ post.slides }}">slides</a></li>{% endif %}
-            <li><button class="cite-btn" type="button" aria-label="Copy BibTeX citation" data-bibtex="{{ bibtex | xml_escape }}">cite</button></li>
-          </ul>
-          <div class="card__excerpt">{{ post.excerpt }}</div>
-        </div>
-      </article>
-    {% endif %}
-  {% endfor %}
-</div>
-
-<h2 id="projects" class="section-heading animate-on-scroll">All Research</h2>
+<h2 id="projects" class="section-heading animate-on-scroll">Research</h2>
 
 <div class="card-list">
   {% for post in site.posts %}
@@ -63,14 +11,10 @@
   booktitle={ {{- post.venue -}} },
   year={ {{- post.date | date: "%Y" -}} }
 }{% endcapture %}
-      {% assign webp_img = post.image | replace: '.png', '.webp' | replace: '.jpg', '.webp' %}
       <article class="card animate-on-scroll{% if post.featured %} card--featured{% endif %}">
         <a class="card__media" href="{{ post.url | relative_url }}">
           {% if post.image %}
-            <picture>
-              <source srcset="{{ '/tn' | append: webp_img | relative_url }}" type="image/webp">
-              <img src="{{ '/tn' | append: post.image | relative_url }}" alt="{{ post.title | escape }}" loading="lazy" decoding="async">
-            </picture>
+            <img src="{{ '/tn' | append: post.image | relative_url }}" alt="" loading="lazy" decoding="async">
           {% else %}
             <div class="card__placeholder">
               <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="6" width="32" height="36" rx="2" stroke="currentColor" stroke-width="1.5"/><line x1="14" y1="14" x2="34" y2="14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="14" y1="20" x2="34" y2="20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="14" y1="26" x2="28" y2="26" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
@@ -78,7 +22,7 @@
           {% endif %}
         </a>
         <div class="card__body">
-          <h3 class="card__title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <h3 class="card__title">{{ post.title }}</h3>
           {% if post.subtitle %}
             <p class="card__subtitle">{{ post.subtitle }}</p>
           {% endif %}
@@ -88,7 +32,6 @@
           </p>
           <ul class="card__links">
             {% if post.paper %}<li><a href="{{ post.paper }}">paper</a></li>{% endif %}
-            {% if post.website and post.website != "" %}<li><a href="{{ post.website }}">website</a></li>{% endif %}
             {% if post.article %}<li><a href="{{ post.article }}">article</a></li>{% endif %}
             {% if post.arxiv %}<li><a href="{{ post.arxiv }}">arxiv</a></li>{% endif %}
             {% if post.video %}<li><a href="{{ post.video }}">video</a></li>{% endif %}
@@ -112,14 +55,10 @@
 <div class="card-list collapsible" id="side-projects-list">
   {% for post in site.posts %}
     {% if post.categories contains 'side-project' %}
-      {% assign webp_img = post.image | replace: '.png', '.webp' | replace: '.jpg', '.webp' %}
       <article class="card animate-on-scroll">
         <a class="card__media" href="{{ post.url | relative_url }}">
           {% if post.image %}
-            <picture>
-              <source srcset="{{ '/tn' | append: webp_img | relative_url }}" type="image/webp">
-              <img src="{{ '/tn' | append: post.image | relative_url }}" alt="{{ post.title | escape }}" loading="lazy" decoding="async">
-            </picture>
+            <img src="{{ '/tn' | append: post.image | relative_url }}" alt="" loading="lazy" decoding="async">
           {% else %}
             <div class="card__placeholder">
               <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="6" width="32" height="36" rx="2" stroke="currentColor" stroke-width="1.5"/><line x1="14" y1="14" x2="34" y2="14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="14" y1="20" x2="34" y2="20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="14" y1="26" x2="28" y2="26" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
@@ -127,7 +66,7 @@
           {% endif %}
         </a>
         <div class="card__body">
-          <h3 class="card__title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <h3 class="card__title">{{ post.title }}</h3>
           {% if post.subtitle %}
             <p class="card__subtitle">{{ post.subtitle }}</p>
           {% endif %}

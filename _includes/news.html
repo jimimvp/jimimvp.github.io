@@ -1,9 +1,6 @@
 {% if site.data.news and site.data.news.size > 0 %}
 <section class="news animate-on-scroll" aria-label="Recent news">
-  <div class="news__header">
-    <h2 class="news__heading">News &amp; Highlights</h2>
-    <a class="news__more" href="{{ '/cv' | relative_url }}">Full timeline &rarr;</a>
-  </div>
+  <h2 class="news__heading">News</h2>
   <ul class="news__list">
     {% for item in site.data.news limit: 5 %}
       <li class="news__item">

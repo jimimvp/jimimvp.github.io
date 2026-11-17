@@ -4,17 +4,15 @@
 
 <footer class="site-footer">
   <div class="site-footer__inner">
-    {% unless page.url == '/' %}
     <ul class="social" aria-label="Social and academic profiles">
       {% for sm in site.data.social_media %}
         <li>
-          <a href="{{ sm.link }}" aria-label="{{ sm.name | default: 'External profile' }}" title="{{ sm.name }}" target="_blank" rel="noopener noreferrer">
+          <a href="{{ sm.link }}" aria-label="{{ sm.name | default: 'External profile' }}" target="_blank" rel="noopener noreferrer">
             {% include icon.html name=sm.icon %}
           </a>
         </li>
       {% endfor %}
     </ul>
-    {% endunless %}
     <p class="site-footer__copy">
       &copy; {{ 'now' | date: "%Y" }} <a href="{{ '/' | relative_url }}">{{ site.name }}</a>
     </p>

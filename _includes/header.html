@@ -4,7 +4,7 @@
 
 <title>{{ page.title | default: site.name }}</title>
 
-{% assign page_description = page.description | default: site.description | default: "Marin Vlastelica - member of technical staff at Project Prometheus. Research in reinforcement learning and generative models." %}
+{% assign page_description = page.description | default: site.description | default: "Marin Vlastelica - member of technical staff at Prometheus. Research in reinforcement learning and generative models." %}
 {% comment %} Post front matter stores images relative to /images (e.g. "/wasabi.png") {% endcomment %}
 {% if page.image %}
   {% assign page_image = page.image | prepend: '/images' | absolute_url %}
